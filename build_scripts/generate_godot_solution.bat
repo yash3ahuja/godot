@@ -1,0 +1,1 @@
+scons platform=windows vsproj=yes dev_build=yes debug_symbols=yes module_mono_enabled=yes
