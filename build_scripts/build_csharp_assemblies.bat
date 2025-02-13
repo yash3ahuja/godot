@@ -1,0 +1,1 @@
+python ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir ./bin --push-nupkgs-local C:\Users\Yash\LocalNugetSource
