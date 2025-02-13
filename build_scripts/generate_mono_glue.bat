@@ -1,0 +1,1 @@
+.\bin\godot.windows.editor.dev.x86_64.mono.console.exe --headless --generate-mono-glue modules/mono/glue
