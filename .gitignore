@@ -390,3 +390,7 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 *.generated.props
+
+
+# Ignore debugger files
+.netcoredbg_hist
