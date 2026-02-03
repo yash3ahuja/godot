@@ -163,7 +163,7 @@ exported from other tools such as Maya.
 
 - **Importer** Which import method is used. ubfx handles fbx files as fbx files.
   FBX2glTF converts FBX files to glTF on import and requires additional setup.
-  FBX2glTF is not recommended unless you have a specific rason to use it over
+  FBX2glTF is not recommended unless you have a specific reason to use it over
   ufbx or working with a different file format.
 - **Allow Geometry Helper Nodes** enables or disables geometry helper nodes
 - **Embedded Texture Handling:** Controls how textures embedded within fbx
@@ -206,6 +206,9 @@ Only visible for ``.blend`` files.
 - **Export Geometry Nodes Instances:** If checked, imports
   `geometry node <https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/introduction.html>`__
   instances from Blender.
+- **GPU Instances** If checked, imports instances and particle systems as GLTF's
+  buffer/accessor data instead of numerous singular Mesh3D object. This does not
+  include Geometry Nodes instancing.
 - **Tangents:** If checked, imports vertex tangents from Blender.
 - **Skins:** **None** skips skeleton skin data import from Blender. **4 Influences (Compatible)**
   imports skin data to be compatible with all renderers, at the cost of lower precision
@@ -288,7 +291,7 @@ To use your script, locate the script in the import tab's "Path" option under th
 Using animation libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As of Godot 4.0, you can choose to import **only** animations from a glTF file and
+You can also choose to import **only** animations from a glTF file and
 nothing else. This is used in some asset pipelines to distribute animations
 separately from models. For example, this allows you to use one set of
 animations for several characters, without having to duplicate animation data in

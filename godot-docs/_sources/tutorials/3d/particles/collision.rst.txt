@@ -28,12 +28,6 @@ on each system's :ref:`visibility layers <class_VisualInstance3D>`. A particle s
 collision node only if at least one of the system's visibility layers is enabled in the
 collider's cull mask.
 
-.. warning::
-
-   There is a `known issue <https://github.com/godotengine/godot/issues/61014>`_ with
-   GPU particle collision that prevent the cull mask from working properly in Godot 4.0. We will
-   update the documentation as soon as it is fixed.
-
 Box collision
 ~~~~~~~~~~~~~
 
@@ -128,6 +122,11 @@ around the player while not wasting performance on regions that are out of sight
 
 SDF collision
 ~~~~~~~~~~~~~
+
+.. note::
+
+     Particle SDF collision is only supported in the Forward+ and Mobile renderers,
+     not Compatibility.
 
 .. figure:: img/particle_collision_sdf_entry.webp
    :alt: Particle collision SDF

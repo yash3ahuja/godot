@@ -200,7 +200,7 @@ Time*. By default, they restart automatically, emitting the signal in a cycle.
 We can connect to this signal from the *Main* node to spawn monsters every
 ``0.5`` seconds.
 
-With the *MobTimer* still selected, head to the *Node* dock on the right, and
+With the *MobTimer* still selected, head to the *Signals* dock on the right, and
 double-click the ``timeout`` signal.
 
 |image23|
@@ -335,8 +335,8 @@ Here is the complete ``main.gd`` script so far, for reference.
         }
     }
 
-You can test the scene by pressing :kbd:`F6`. You should see the monsters spawn and
-move in a straight line.
+You can test the scene by pressing :kbd:`F6` (:kbd:`Cmd + R` on macOS). You should see
+the monsters spawn and move in a straight line.
 
 |image25|
 

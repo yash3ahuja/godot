@@ -254,11 +254,13 @@ Reference
       | Makes ``{text}`` underlined.
 
     - ``[u]{text}[/u]``
+      ``[u color={color}]{text}[/u]``
 
   * - | **s**
       | Makes ``{text}`` strikethrough.
 
     - ``[s]{text}[/s]``
+      ``[s color={color}]{text}[/s]``
 
   * - | **code**
       | Makes ``{text}`` use the mono font of ``RichTextLabel``.
@@ -323,11 +325,13 @@ Reference
 
   * - | **url**
       | Creates a hyperlink (underlined and clickable text). Can contain optional
-        ``{text}`` or display ``{link}`` as is.
+        ``{text}`` or display ``{link}`` as is. Supports configuration options,
+        see :ref:`doc_bbcode_in_richtextlabel_url_options`.
       | **Must be handled with the "meta_clicked" signal to have an effect,** see :ref:`doc_bbcode_in_richtextlabel_handling_url_tag_clicks`.
 
     - | ``[url]{link}[/url]``
       | ``[url={link}]{text}[/url]``
+      | ``[url {options}]{text}[/url]``
 
   * - | **hint**
       | Creates a tooltip hint that is displayed when hovering the text with the mouse.
@@ -443,10 +447,12 @@ Reference
       | If ``{valign}`` configuration is provided, the table will try to align to the
         surrounding text, see :ref:`doc_bbcode_in_richtextlabel_image_and_table_alignment`.
       | If baseline alignment is used, the table is aligned to the baseline of the row with index ``{alignment_row}`` (zero-based).
+      | ``{name}`` is a table name for assistive apps (screen reader).
 
     - | ``[table={number}]{cells}[/table]``
       | ``[table={number},{valign}]{cells}[/table]``
       | ``[table={number},{valign},{alignment_row}]{cells}[/table]``
+      | ``[table={number},{valign},{alignment_row} name={name}]{cells}[/table]``
 
   * - | **cell**
       | Adds a cell with ``{text}`` to the table.
@@ -656,6 +662,42 @@ Horizontal rule options
   Horizontal alignment.
 
 
+.. _doc_bbcode_in_richtextlabel_url_options:
+
+URL options
+~~~~~~~~~~~
+
+- **underline**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | ``always``, ``never``, ``hover``           |
+  +-----------+--------------------------------------------+
+  | `Default` | ``always``                                 |
+  +-----------+--------------------------------------------+
+
+  URL underlining mode.
+
+- **tooltip**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | String.                                    |
+  +-----------+--------------------------------------------+
+  | `Default` |                                            |
+  +-----------+--------------------------------------------+
+
+  URL tooltip.
+
+- **href**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | String.                                    |
+  +-----------+--------------------------------------------+
+  | `Default` |                                            |
+  +-----------+--------------------------------------------+
+
+  URL target address.
+
+
 .. _doc_bbcode_in_richtextlabel_image_options:
 
 Image options
@@ -720,6 +762,26 @@ Image options
   +-----------+--------------------------------------------+
 
   Image tooltip.
+
+- **alt**
+
+  +-----------+------------------------------------------------------------------------+
+  | `Values`  | see :ref:`doc_bbcode_in_richtextlabel_image_and_table_alignment`       |
+  +-----------+------------------------------------------------------------------------+
+  | `Default` | ``center,center``                                                      |
+  +-----------+------------------------------------------------------------------------+
+
+  Image alignment to the surrounding text.
+
+- **alt**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | String                                     |
+  +-----------+--------------------------------------------+
+  | `Default` |                                            |
+  +-----------+--------------------------------------------+
+
+  Image description for assistive apps (screen reader).
 
 .. _doc_bbcode_in_richtextlabel_image_and_table_alignment:
 
@@ -920,6 +982,16 @@ color codes such as ``#6f28`` (equivalent to ``#66ff2288``) are supported as wel
 Cell options
 ~~~~~~~~~~~~
 
+- **shrink**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | ``false``, ``true``                        |
+  +-----------+--------------------------------------------+
+  | `Default` | ``true``                                   |
+  +-----------+--------------------------------------------+
+
+  If ``true``, cell can shrink to its contents.
+
 - **expand**
 
   +-----------+--------------------------------------------+
@@ -994,7 +1066,7 @@ Text effects
 ------------
 
 BBCode can also be used to create different text effects that can optionally be
-animated. Five customizable effects are provided out of the box, and you can
+animated. Several customizable effects are provided out of the box, and you can
 easily create your own. By default, animated effects will pause
 :ref:`when the SceneTree is paused <doc_pausing_games>`. You can change this
 behavior by adjusting the RichTextLabel's **Process > Mode** property.
@@ -1209,7 +1281,7 @@ Matrix
         var dirty_time = char_fx.env.get("dirty", 1.0)
         var text_span = char_fx.env.get("span", 50)
 
-        var value = char_fx.glyph_index
+        var value = get_text_server().font_get_char_from_glyph_index(char_fx.font, 1, char_fx.glyph_index)
 
         var matrix_time = fmod(char_fx.elapsed_time + (char_fx.range.x / float(text_span)), \
                                clear_time + dirty_time)

@@ -158,6 +158,8 @@ There are several background modes available:
 - **Keep** does not draw any sky, keeping what was present on previous frames
   instead. This improves performance in purely indoor scenes, but creates a
   "hall of mirrors" visual glitch if the sky is visible at any time.
+  - **Camera Feed** displays a :ref:`class_CameraFeed` from a physical camera as the
+  background, useful for AR games on mobile devices.
 
 Sky materials
 ~~~~~~~~~~~~~
@@ -268,58 +270,6 @@ Reflected light can be set to one of 3 modes:
   mode other than **Sky**. If the background mode is already **Sky**, this mode
   behaves identically to **Background**.
 
-Fog
-~~~
-
-.. note::
-
-    This section refers to non-volumetric fog only.
-    It is possible to use both non-volumetric fog and :ref:`doc_volumetric_fog`
-    at the same time.
-
-Fog, as in real life, makes distant objects fade away into a uniform color.
-There are two kinds of fog in Godot:
-
-- **Depth Fog:** This one is applied based on the distance from the camera.
-- **Height Fog:** This one is applied to any objects below (or above) a certain
-  height, regardless of the distance from the camera.
-
-.. image:: img/environment_fog_depth_height.webp
-
-Both of these fog types can have their curve tweaked, making their transition more or less sharp.
-
-Two properties can be tweaked to make the fog effect more interesting:
-
-The first is **Sun Scatter**, which makes use of the DirectionalLight3D's color
-and energy in the current scene. When looking towards the directional light
-(usually a sun), the fog will be tinted according to the light's color to
-simulate the sunlight passing through the fog.
-
-The second is **Aerial Perspective**, which tints the fog color according to the
-sky color to better blend the sky with the background. Higher values will result
-in more tinting, with ``1.0`` fully replacing the regular fog color with aerial
-perspective. This can be used in large open world levels to provide a better
-sense of depth, or to avoid color discontinuities between the sky and fog colors.
-
-If both **Sun Scatter** and **Aerial Perspective** are greater than ``0.0``, sun
-scattering is applied on top of aerial perspective.
-
-.. note::
-
-    Fog can cause banding to appear on the viewport, especially at
-    higher density levels. See :ref:`doc_3d_rendering_limitations_color_banding`
-    for guidance on reducing banding.
-
-Volumetric Fog
-~~~~~~~~~~~~~~
-
-Volumetric fog provides a realistic fog effect to the scene, with fog color
-being affected by the lights that traverse the fog.
-
-.. seealso::
-
-  See :ref:`doc_volumetric_fog` for documentation on setting up volumetric fog.
-
 Tonemap
 ~~~~~~~
 
@@ -348,8 +298,7 @@ The tone mapping options are:
   - **AgX:** Uses a film-like tonemapping curve and desaturates bright values
     for a more realistic appearance. Better than other tonemappers at
     maintaining the hue of colors as they become brighter. The slowest
-    tonemapping option. **White** is fixed at a value of ``16.29``,
-    which makes AgX unsuitable for use with the Mobile rendering method.
+    tonemapping option.
 
 - **Exposure:** Adjusts the brightness of values before they are provided to
   the tonemapper. Higher **Exposure** values result in a brighter image.
@@ -362,7 +311,13 @@ The tone mapping options are:
   For photorealistic lighting, recommended values are between ``6.0`` and
   ``8.0``. Higher values result in less blown out highlights, but may make the
   scene appear lower contrast. **White** is not available when using
-  **Linear** or **AgX**.
+  **Linear**. If you're using AGX, the mobile renderer, and HDR 2D is disabled,
+  then the value set here will be ignored, and a value of ``2.0`` will be used
+  instead.
+
+- **AGX Contrast:** Only available when using AGX. Increasing this makes dark values
+  darker, and bright values brighter. It creates better results than the contrast
+  option in the adjustment section at no additional performance cost.
 
 Mid- and post-processing effects
 --------------------------------
@@ -403,7 +358,7 @@ off-screen objects).
 
 A few user-controlled parameters are available to better tweak the technique:
 
-- **Max Steps:** Determines the length of the reflection. The bigger this
+- **Max Steps:** Determines the maximum length of the reflection. The bigger this
   number, the more costly it is to compute.
 - **Fade In:** Allows adjusting the fade-in curve, which is useful to make the
   contact area softer.
@@ -415,16 +370,24 @@ A few user-controlled parameters are available to better tweak the technique:
   screen-space reflections exhibit fewer "breakups", at the cost of some objects
   creating physically incorrect reflections.
 
-Keep in mind that screen-space-reflections only work for reflecting opaque
-geometry. Transparent materials won't be reflected, as they don't write to the depth buffer.
-This also applies to shaders that use ``hint_screen_texture`` or ``hint_depth_texture``
-uniforms.
+Additionally, you can adjust the quality of SSR in the project settings
+by toggling **Rendering > Environment > Screen Space Reflection > Half Size**.
+By default, screen-space reflections are rendered at half resolution for
+performance reasons. Disabling this setting will make the effect render at
+full resolution, which improves quality at the cost of increased GPU utilization.
+
+.. note::
+
+    Keep in mind that screen-space reflections only work for reflecting opaque
+    geometry. Transparent materials won't be reflected, as they don't write to the depth buffer.
+    This also applies to shaders that use ``hint_screen_texture`` or ``hint_depth_texture``
+    uniforms.
 
 Screen-Space Ambient Occlusion (SSAO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*This feature is only available when using the Forward+ renderer, not
-Mobile or Compatibility.*
+*This feature is only available when using the Forward+ and Compatibility renderers,
+not Mobile.*
 
 As mentioned in the **Ambient** section, areas where light from light nodes
 does not reach (either because it's outside the radius or shadowed) are lit
@@ -495,6 +458,38 @@ parameters:
   materials that have an AO texture defined. Values higher than ``0.0`` will
   make the SSAO effect visible in areas darkened by AO textures.
 
+Additionally, you can adjust the quality of SSAO in the project settings'
+**Rendering > Environment > SSAO** section:
+
+- **Quality:** Sets the quality of the screen-space ambient occlusion effect.
+  Higher values take more samples and so will result in better quality at the
+  cost of performance. Setting this to Ultra will use the **Adaptive Target** setting
+  (see below).
+- **Half Size:** If ``true``, screen-space ambient occlusion will be rendered at
+  half size and then upscaled before being added to the scene. This is
+  significantly faster but may miss small details. If ``false``, screen-space
+  ambient occlusion will be rendered at full size.
+- **Adaptive Target:** Quality target to use when **Quality** is set to
+  **Ultra**. A value of ``0.0`` provides a quality and speed similar to Medium
+  while a value of ``1.0`` provides much higher quality than any of the other
+  settings at the cost of performance.
+- **Blur Passes:** Number of blur passes to use when computing screen-space
+  ambient occlusion. A higher number will result in a smoother look, but will be
+  slower to compute and will have less high-frequency detail.
+- **Fadeout From:** Distance at which the screen-space ambient occlusion effect
+  starts to fade out. Use this hide ambient occlusion from far away.
+- **Fadeout To:** Distance at which the screen-space ambient occlusion is fully
+  faded out. Use this hide ambient occlusion from far away.
+
+.. note::
+
+    Since Godot 4.6, a simplified version of SSAO is available in the Compatibility
+    renderer. This implementation has a different look, but should perform
+    significantly better on low-end devices compared to SSAO in Forward+.
+
+    When using the Compatibility renderer, only the **Radius** and **Intensity**
+    parameters can be adjusted.
+
 .. _doc_environment_and_post_processing_ssil:
 
 Screen-Space Indirect Lighting (SSIL)
@@ -540,6 +535,31 @@ Tweaking :abbr:`SSIL (Screen-Space Indirect Lighting)` is possible with several 
   object is illuminated. However, normal rejection can be disabled if light
   leaking is desirable, such as when the scene mostly contains emissive objects
   that emit light from faces that cannot be seen from the camera.
+
+Additionally, you can adjust the quality of SSIL in the project settings'
+**Rendering > Environment > SSIL** section:
+
+- **Quality:** Sets the quality of the screen-space ambient occlusion effect.
+  Higher values take more samples and so will result in better quality, at the
+  cost of performance. Setting to Ultra will use the **Adaptive Target** setting
+  (see below).
+- **Half Size:** If ``true``, screen-space ambient occlusion will be rendered at
+  half size and then upscaled before being added to the scene. This is
+  significantly faster but may miss small details. If ``false``, screen-space
+  ambient occlusion will be rendered at full size.
+- **Adaptive Target:** Quality target to use when **Quality** is set to
+  **Ultra**. A value of ``0.0`` provides a quality and speed similar to Medium
+  while a value of ``1.0`` provides much higher quality than any of the other
+  settings at the cost of performance. When using the adaptive target, the
+  performance cost scales with the complexity of the scene.
+- **Blur Passes:** Number of blur passes to use when computing screen-space
+  indirect lighting. A higher number will result in a smoother look, but will be
+  slower to compute and will have less high-frequency detail.
+- **Fadeout From:** Distance at which the screen-space indirect lighting effect
+  starts to fade out. Use this to hide screen-space indirect lighting from far
+  away.
+- **Fadeout To:** Distance at which the screen-space indirect lighting is fully
+  faded out. Use this to hide screen-space indirect lighting from far away.
 
 .. image:: img/environment_ssil.webp
 
@@ -673,7 +693,7 @@ There are 2 ways to use glow in 2D:
   and Mobile rendering methods. This has a performance cost, but it allows for a
   greater dynamic range. This also allows you to control which objects glow
   using their individual **Modulate** or **Self Modulate** properties (use the
-  RAW mode in the color picker). Enabling HDR can also reduce banding in the 2D
+  Intensity slider in the color picker). Enabling HDR can also reduce banding in the 2D
   rendering output.
 
   - To enable HDR in 2D, open the Project Settings, enable
@@ -696,7 +716,7 @@ There are 2 ways to use glow in 2D:
 
    Example of using glow in a 2D scene. HDR 2D is enabled, while coins and the
    bullet have their **Modulate** property increased to overbright values using the
-   RAW mode in the color picker.
+   Intensity slider in the color picker.
 
 .. warning::
 
@@ -742,6 +762,58 @@ To use glow as a blurring solution:
    :alt: Example of using glow to blur the 2D rendering in the menu's background
 
    Example of using glow to blur the 2D rendering in the menu's background
+
+Fog
+~~~
+
+.. note::
+
+    This section refers to non-volumetric fog only.
+    It is possible to use both non-volumetric fog and :ref:`doc_volumetric_fog`
+    at the same time.
+
+Fog, as in real life, makes distant objects fade away into a uniform color.
+There are two kinds of fog in Godot:
+
+- **Depth Fog:** This one is applied based on the distance from the camera.
+- **Height Fog:** This one is applied to any objects below (or above) a certain
+  height, regardless of the distance from the camera.
+
+.. image:: img/environment_fog_depth_height.webp
+
+Both of these fog types can have their curves tweaked, making their transition more or less sharp.
+
+Two properties can be tweaked to make the fog effect more interesting:
+
+The first is **Sun Scatter**, which makes use of the DirectionalLight3D's color
+and energy in the current scene. When looking toward the directional light
+(usually a sun), the fog will be tinted according to the light's color to
+simulate the sunlight passing through the fog.
+
+The second is **Aerial Perspective**, which tints the fog color according to the
+sky color to better blend the sky with the background. Higher values will result
+in more tinting, with ``1.0`` fully replacing the regular fog color with aerial
+perspective. This can be used in large open world levels to provide a better
+sense of depth, or to avoid color discontinuities between the sky and fog colors.
+
+If both **Sun Scatter** and **Aerial Perspective** are greater than ``0.0``, sun
+scattering is applied on top of aerial perspective.
+
+.. note::
+
+    Fog can cause banding to appear on the viewport, especially at
+    higher density levels. See :ref:`doc_3d_rendering_limitations_color_banding`
+    for guidance on reducing banding.
+
+Volumetric Fog
+~~~~~~~~~~~~~~
+
+Volumetric fog provides a realistic fog effect to the scene, with fog color
+being affected by the lights that traverse the fog.
+
+.. seealso::
+
+  See :ref:`doc_volumetric_fog` for documentation on setting up volumetric fog.
 
 Adjustments
 ~~~~~~~~~~~
@@ -825,6 +897,11 @@ For example, modifying the LUT template in an image editor to give it a
 Camera attribute options
 ------------------------
 
+Godot has two kinds of camera attributes, physical and practical. When using
+CameraAttributesPhysical instead of CameraAttributesPractical, depth of field is
+automatically computed from the camera attributes' focus distance, focal length, and
+aperture. In addition, Frutsum options are available.
+
 Depth of Field / Far Blur
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -855,12 +932,6 @@ given object, or create a so-called
 `"tilt shift" effect <https://en.wikipedia.org/wiki/Miniature_faking>`__.
 
 .. image:: img/environment_mixed_blur.webp
-
-.. note::
-
-    When using CameraAttributesPhysical instead of CameraAttributesPractical,
-    depth of field is automatically computed from the camera attributes' focus
-    distance, focal length, and aperture.
 
 Exposure
 ~~~~~~~~

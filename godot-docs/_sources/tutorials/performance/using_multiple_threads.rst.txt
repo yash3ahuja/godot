@@ -3,6 +3,10 @@
 Using multiple threads
 ======================
 
+.. seealso::
+
+    For a list of multithreading primitives in C++, see :ref:`doc_core_concurrency_types`.
+
 Threads
 -------
 
@@ -149,6 +153,8 @@ wait until the thread is done (if not done yet), then properly dispose of it.
     Additionally, locking and unlocking of mutexes can also be an expensive
     operation. Locking should be done carefully; avoid locking too often (or for
     too long).
+
+.. _doc_using_multiple_threads_mutexes:
 
 Mutexes
 -------

@@ -69,7 +69,7 @@ Finally, click the :button:`Import` button.
 .. image:: img/instancing_import_and_edit_button.webp
 
 A window notifying you that the project was last opened in an older Godot version
-may appear, that's not an issue. Click :button:`Ok` to open the project.
+may appear. That's not an issue. Click :button:`OK` to open the project.
 
 The project contains two packed scenes: ``main.tscn``, containing walls against
 which the ball collides, and ``ball.tscn``. The Main scene should open
@@ -153,11 +153,11 @@ on the corresponding tab above the viewport.
 Select one of the instanced Ball nodes and, in the :ui:`Inspector`, set its
 :inspector:`Gravity Scale` value to ``10``.
 
-.. image:: img/instancing_property_gravity_scale.png
+.. image:: img/instancing_property_gravity_scale.webp
 
 A grey "revert" button appears next to the adjusted property.
 
-.. image:: img/instancing_property_revert_icon.png
+.. image:: img/instancing_property_revert_icon.webp
 
 This icon indicates you are overriding a value from the source packed scene.
 Even if you modify the property in the original scene, the value override will

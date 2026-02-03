@@ -1025,7 +1025,7 @@ Set ``ALBEDO`` to the per-vertex color specified in the mesh.
 
 :ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_SRGB_VERTEX_COLOR** = ``2``
 
-Vertex colors are considered to be stored in sRGB color space and are converted to linear color space during rendering. See also :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`.
+Vertex colors are considered to be stored in nonlinear sRGB encoding and are converted to linear encoding during rendering. See also :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`.
 
 \ **Note:** Only effective when using the Forward+ and Mobile rendering methods.
 
@@ -1107,7 +1107,7 @@ Use ``UV2`` coordinates to look up from the :ref:`emission_texture<class_BaseMat
 
 :ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_ALBEDO_TEXTURE_FORCE_SRGB** = ``12``
 
-Forces the shader to convert albedo from sRGB space to linear space. See also :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
+Forces the shader to convert albedo from nonlinear sRGB encoding to linear encoding. See also :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
 
 .. _class_BaseMaterial3D_constant_FLAG_DONT_RECEIVE_SHADOWS:
 
@@ -1517,7 +1517,7 @@ enum **StencilFlags**: :ref:`🔗<enum_BaseMaterial3D_StencilFlags>`
 
 :ref:`StencilFlags<enum_BaseMaterial3D_StencilFlags>` **STENCIL_FLAG_READ** = ``1``
 
-The material will only be rendered where it passes a stencil comparison with existing stencil buffer values. See :ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>`.
+The material will only be rendered where it passes a stencil comparison with existing stencil buffer values.
 
 .. _class_BaseMaterial3D_constant_STENCIL_FLAG_WRITE:
 
@@ -1659,7 +1659,7 @@ If the texture appears unexpectedly too dark or too bright, check :ref:`albedo_t
 - |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
-If ``true``, forces a conversion of the :ref:`albedo_texture<class_BaseMaterial3D_property_albedo_texture>` from sRGB color space to linear color space. See also :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`.
+If ``true``, forces a conversion of the :ref:`albedo_texture<class_BaseMaterial3D_property_albedo_texture>` from nonlinear sRGB encoding to linear encoding. See also :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`.
 
 This should only be enabled when needed (typically when using a :ref:`ViewportTexture<class_ViewportTexture>` as :ref:`albedo_texture<class_BaseMaterial3D_property_albedo_texture>`). If :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>` is ``true`` when it shouldn't be, the texture will appear to be too dark. If :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>` is ``false`` when it shouldn't be, the texture will appear to be too bright.
 
@@ -2157,7 +2157,7 @@ Determines when depth rendering takes place. See also :ref:`transparency<class_B
 
 **Experimental:** May be affected by future rendering pipeline changes.
 
-Determines which comparison operator is used when testing depth. See :ref:`DepthTest<enum_BaseMaterial3D_DepthTest>`.
+Determines which comparison operator is used when testing depth.
 
 \ **Note:** Changing :ref:`depth_test<class_BaseMaterial3D_property_depth_test>` to a non-default value only has a visible effect when used on a transparent material, or a material that has :ref:`depth_draw_mode<class_BaseMaterial3D_property_depth_draw_mode>` set to :ref:`DEPTH_DRAW_DISABLED<class_BaseMaterial3D_constant_DEPTH_DRAW_DISABLED>`.
 
@@ -3342,7 +3342,7 @@ The primary color of the stencil effect.
 
 **Experimental:** May be affected by future rendering pipeline changes.
 
-The comparison operator to use for stencil masking operations. See :ref:`StencilCompare<enum_BaseMaterial3D_StencilCompare>`.
+The comparison operator to use for stencil masking operations.
 
 .. rst-class:: classref-item-separator
 
@@ -3361,7 +3361,7 @@ The comparison operator to use for stencil masking operations. See :ref:`Stencil
 
 **Experimental:** May be affected by future rendering pipeline changes.
 
-The flags dictating how the stencil operation behaves. See :ref:`StencilFlags<enum_BaseMaterial3D_StencilFlags>`.
+The flags dictating how the stencil operation behaves.
 
 .. rst-class:: classref-item-separator
 
@@ -3380,7 +3380,7 @@ The flags dictating how the stencil operation behaves. See :ref:`StencilFlags<en
 
 **Experimental:** May be affected by future rendering pipeline changes.
 
-The stencil effect mode. See :ref:`StencilMode<enum_BaseMaterial3D_StencilMode>`.
+The stencil effect mode.
 
 .. rst-class:: classref-item-separator
 
@@ -3436,6 +3436,8 @@ The stencil reference value (0-255). Typically a power of 2.
 - :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, subsurface scattering is enabled. Emulates light that penetrates an object's surface, is scattered, and then emerges. Subsurface scattering quality is controlled by :ref:`ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_quality<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_quality>`.
+
+\ **Note:** Subsurface scattering is not supported on viewports that have a transparent background (where :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` is ``true``).
 
 .. rst-class:: classref-item-separator
 
@@ -3885,7 +3887,7 @@ If ``true``, triplanar mapping for ``UV2`` is calculated in world space rather t
 - |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
-If ``true``, vertex colors are considered to be stored in sRGB color space and are converted to linear color space during rendering. If ``false``, vertex colors are considered to be stored in linear color space and are rendered as-is. See also :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
+If ``true``, vertex colors are considered to be stored in nonlinear sRGB encoding and are converted to linear encoding during rendering. If ``false``, vertex colors are considered to be stored in linear encoding and are rendered as-is. See also :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
 
 \ **Note:** Only effective when using the Forward+ and Mobile rendering methods, not Compatibility.
 
@@ -3938,7 +3940,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const| :ref:`🔗<class_BaseMaterial3D_method_get_feature>`
 
-Returns ``true``, if the specified :ref:`Feature<enum_BaseMaterial3D_Feature>` is enabled.
+Returns ``true`` if the specified ``feature`` is enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -3950,7 +3952,7 @@ Returns ``true``, if the specified :ref:`Feature<enum_BaseMaterial3D_Feature>` i
 
 :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const| :ref:`🔗<class_BaseMaterial3D_method_get_flag>`
 
-Returns ``true`` if the specified flag is enabled.
+Returns ``true`` if the specified ``flag`` is enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -3962,7 +3964,7 @@ Returns ``true`` if the specified flag is enabled.
 
 :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const| :ref:`🔗<class_BaseMaterial3D_method_get_texture>`
 
-Returns the :ref:`Texture2D<class_Texture2D>` associated with the specified :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`.
+Returns the :ref:`Texture2D<class_Texture2D>` associated with the specified texture ``param``.
 
 .. rst-class:: classref-item-separator
 
@@ -3974,7 +3976,7 @@ Returns the :ref:`Texture2D<class_Texture2D>` associated with the specified :ref
 
 |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_BaseMaterial3D_method_set_feature>`
 
-If ``true``, enables the specified :ref:`Feature<enum_BaseMaterial3D_Feature>`. Many features that are available in **BaseMaterial3D**\ s need to be enabled before use. This way the cost for using the feature is only incurred when specified. Features can also be enabled by setting the corresponding member to ``true``.
+If ``enable`` is ``true``, enables the specified ``feature``. Many features that are available in **BaseMaterial3D** need to be enabled before use. This way, the cost for using the feature is only incurred when specified. Features can also be enabled by setting their corresponding property to ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -3986,7 +3988,7 @@ If ``true``, enables the specified :ref:`Feature<enum_BaseMaterial3D_Feature>`. 
 
 |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_BaseMaterial3D_method_set_flag>`
 
-If ``true``, enables the specified flag. Flags are optional behavior that can be turned on and off. Only one flag can be enabled at a time with this function, the flag enumerators cannot be bit-masked together to enable or disable multiple flags at once. Flags can also be enabled by setting the corresponding member to ``true``.
+If ``enable`` is ``true``, enables the specified ``flag``. Flags are optional behavior that can be turned on and off. Only one flag can be enabled at a time with this function, the flag enumerators cannot be bit-masked together to enable or disable multiple flags at once. Flags can also be enabled by setting their corresponding property to ``true``.
 
 .. rst-class:: classref-item-separator
 

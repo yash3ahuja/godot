@@ -118,7 +118,7 @@ Distro-specific one-liners
         ::
 
             pkg install \
-              py37-scons \
+              devel/scons \
               pkgconf \
               xorg-libraries \
               libXcursor \
@@ -127,7 +127,8 @@ Distro-specific one-liners
               xorgproto \
               libGLU \
               alsa-lib \
-              pulseaudio
+              pulseaudio \
+              wayland
 
     .. tab:: Gentoo
 
@@ -168,9 +169,9 @@ Distro-specific one-liners
 
         ::
 
-            pkg_add \
+            pkgin install \
               pkg-config \
-              py37-scons
+              py313-scons
 
         .. hint::
 
@@ -282,6 +283,13 @@ Manager.
     would not build.
     For RISC-V architecture devices, use the Clang compiler instead of the GCC compiler.
 
+.. note::
+
+    Compiling on some platforms such as OpenBSD may require more memory than
+    available by default.
+    To increase the memory limit on OpenBSD within the maximum for the current user,
+    run ``ulimit -d {new amount in kB}``.
+
 .. tip:: If you are compiling Godot for production use, you can
          make the final executable smaller and faster by adding the
          SCons option ``production=yes``. This enables additional compiler
@@ -296,6 +304,45 @@ Manager.
           and official releases, you can enable
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
+
+Compiling with AccessKit support
+--------------------------------
+
+AccessKit provides support for screen readers.
+
+By default, Godot is built with AccessKit dynamically linked. You can use it by placing
+``accesskit.so`` alongside the executable.
+
+.. note:: You can use dynamically linked AccessKit with export templates as well, rename
+          the SO to ``accesskit.{architecture}.so``
+          and place them alongside the export template executables, and the libraries will
+          be automatically copied during the export process.
+
+To compile Godot with statically linked AccessKit:
+
+- Download the pre-built static libraries from `godot-accesskit-c-static library <https://github.com/godotengine/godot-accesskit-c-static/releases>`_, and unzip them.
+- When building Godot, add ``accesskit_sdk_path={path}`` to tell SCons where to look for the AccessKit libraries:
+
+    ::
+
+        scons platform=linuxbsd accesskit_sdk_path=<...>
+
+.. note:: You can optionally build the godot-angle-static libraries yourself with
+          the following steps:
+
+          1. Clone the `godot-accesskit-c-static <https://github.com/godotengine/godot-accesskit-c-static/>`_
+             directory and navigate to it.
+          2. Run the following command:
+
+          ::
+
+              cd accesskit-c
+              cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+              cmake --build build
+              cmake --install build
+
+          The AccessKit static library should be built using the same compiler you are
+          using for building Godot.
 
 Running a headless/server build
 -------------------------------
@@ -508,20 +555,27 @@ Using mold for faster development
 For even faster linking compared to LLD, you can use `mold <https://github.com/rui314/mold>`__.
 mold can be used with either GCC or Clang.
 
-As of January 2023, mold is not readily available in Linux distribution
-repositories, so you will have to install its binaries manually.
+.. tabs::
+    .. tab:: Debian/Ubuntu
 
-- Download mold binaries from its `releases page <https://github.com/rui314/mold/releases/latest>`__.
-- Extract the ``.tar.gz`` file, then move the extracted folder to a location such as ``.local/share/mold``.
-- Add ``$HOME/.local/share/mold/bin`` to your user's ``PATH`` environment variable.
-  For example, you can add the following line at the end of your ``$HOME/.bash_profile`` file:
+        ::
 
-::
+            sudo apt-get update
+            sudo apt-get install -y mold
 
-    PATH="$HOME/.local/share/mold/bin:$PATH"
+    .. tab:: Fedora
 
-- Open a new terminal (or run ``source "$HOME/.bash_profile"``),
-  then use the following SCons command when compiling Godot:
+        ::
+
+            sudo dnf install -y mold
+
+    .. tab:: Arch Linux
+
+        ::
+
+            pacman -Sy --noconfirm --needed mold
+
+Once mold is installed, use the following SCons command when compiling Godot:
 
   ::
 

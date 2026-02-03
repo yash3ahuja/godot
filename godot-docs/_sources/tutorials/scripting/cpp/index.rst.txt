@@ -14,4 +14,6 @@ the official C++ GDExtension bindings maintained as part of the Godot project.
 
    about_godot_cpp
    gdextension_cpp_example
+   build_system/index
+   core_types
    gdextension_docs_system

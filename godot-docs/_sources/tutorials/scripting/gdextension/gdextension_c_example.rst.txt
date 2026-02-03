@@ -39,7 +39,7 @@ To organize our files, we're gonna split into mainly two folders:
 
     gdextension_c_example/
     |
-    +--demo/                  # game example/demo to test the extension
+    +--project/                  # game example/demo to test the extension
     |
     +--src/                   # source code of the extension we are building
 
@@ -96,7 +96,7 @@ to the root folder.
     env = Environment()
 
     # Set the target path and name.
-    target_path = "demo/bin/"
+    target_path = "project/bin/"
     target_name = "libgdexample"
 
     # Set the compiler and flags.
@@ -306,17 +306,17 @@ We'll start by creating an ``api.h`` file in the ``src`` folder:
 
     // API methods.
 
-    struct Constructors
+    extern struct Constructors
     {
         GDExtensionInterfaceStringNameNewWithLatin1Chars string_name_new_with_latin1_chars;
     } constructors;
 
-    struct Destructors
+    extern struct Destructors
     {
         GDExtensionPtrDestructor string_name_destructor;
     } destructors;
 
-    struct API
+    extern struct API
     {
         GDExtensionInterfaceClassdbRegisterExtensionClass2 classdb_register_extension_class2;
     } api;
@@ -345,16 +345,20 @@ in the ``src`` folder, adding the following code:
 
     GDExtensionClassLibraryPtr class_library = NULL;
 
+    struct Constructors constructors;
+    struct Destructors destructors;
+    struct API api;
+
     void load_api(GDExtensionInterfaceGetProcAddress p_get_proc_address)
     {
         // Get helper functions first.
         GDExtensionInterfaceVariantGetPtrDestructor variant_get_ptr_destructor = (GDExtensionInterfaceVariantGetPtrDestructor)p_get_proc_address("variant_get_ptr_destructor");
 
         // API.
-        api.classdb_register_extension_class2 = p_get_proc_address("classdb_register_extension_class2");
+        api.classdb_register_extension_class2 = (GDExtensionInterfaceClassdbRegisterExtensionClass2)p_get_proc_address("classdb_register_extension_class2");
 
         // Constructors.
-        constructors.string_name_new_with_latin1_chars = p_get_proc_address("string_name_new_with_latin1_chars");
+        constructors.string_name_new_with_latin1_chars = (GDExtensionInterfaceStringNameNewWithLatin1Chars)p_get_proc_address("string_name_new_with_latin1_chars");
 
         // Destructors.
         destructors.string_name_destructor = variant_get_ptr_destructor(GDEXTENSION_VARIANT_TYPE_STRING_NAME);
@@ -500,8 +504,6 @@ in the appropriately named ``defs.h`` file:
         uint8_t data[STRING_NAME_SIZE];
     } StringName;
 
-    #endif // DEFS_H
-
 As mentioned in the comment, the sizes can be found in the
 ``extension_api.json`` file that we generated earlier, under the
 ``builtin_class_sizes`` property. The ``BUILD_32`` is never defined, as we
@@ -539,7 +541,7 @@ So let's change the ``api.h`` to include these new functions:
 .. code-block:: c
 
     ...
-    struct API
+    extern struct API
     {
         GDExtensionInterfaceClassdbRegisterExtensionClass2 classdb_register_extension_class2;
         GDExtensionInterfaceClassdbConstructObject classdb_construct_object;
@@ -560,8 +562,8 @@ Then we change the ``load_api()`` function in ``api.c`` to grab these new functi
         // API.
         api.classdb_register_extension_class2 = p_get_proc_address("classdb_register_extension_class2");
         api.classdb_construct_object = (GDExtensionInterfaceClassdbConstructObject)p_get_proc_address("classdb_construct_object");
-        api.object_set_instance = p_get_proc_address("object_set_instance");
-        api.object_set_instance_binding = p_get_proc_address("object_set_instance_binding");
+        api.object_set_instance = (GDExtensionInterfaceObjectSetInstance)p_get_proc_address("object_set_instance");
+        api.object_set_instance_binding = (GDExtensionInterfaceObjectSetInstanceBinding)p_get_proc_address("object_set_instance_binding");
         api.mem_alloc = (GDExtensionInterfaceMemAlloc)p_get_proc_address("mem_alloc");
         api.mem_free = (GDExtensionInterfaceMemFree)p_get_proc_address("mem_free");
     }
@@ -636,7 +638,7 @@ A demo project
 
 Now that we can create and free our custom object, we should be able to try it
 out in an actual project. For this, you need to open Godot and create a new
-project on the ``demo`` folder. The project manager may warn you the folder
+project in the ``project`` folder. The project manager may warn you the folder
 isn't empty if you have compiled the extension before, you can safely ignore
 this warning this time.
 
@@ -645,7 +647,7 @@ that, open a terminal or command prompt, navigate to the root folder of the
 extension and run ``scons``. It should compile quickly since the extension is
 very simple.
 
-Then, create a file called ``gdexample.gdextension`` inside the ``demo`` folder.
+Then, create a file called ``gdexample.gdextension`` inside the ``project`` folder.
 This is a Godot resource that describes the extension, allowing the engine to
 properly load it. Put the following content in this file:
 
@@ -862,13 +864,13 @@ structs:
 
 .. code-block:: c
 
-    struct Constructors {
+    extern struct Constructors {
         ...
         GDExtensionVariantFromTypeConstructorFunc variant_from_float_constructor;
         GDExtensionTypeFromVariantConstructorFunc float_from_variant_constructor;
     } constructors;
 
-    struct API
+    extern struct API
     {
         ...
         GDExtensionInterfaceGetVariantFromTypeConstructor get_variant_from_type_constructor;
@@ -1006,19 +1008,19 @@ function for actually binding our custom method.
 
 .. code-block:: c
 
-    struct Constructors
+    extern struct Constructors
     {
         ...
         GDExtensionInterfaceStringNewWithUtf8Chars string_new_with_utf8_chars;
     } constructors;
 
-    struct Destructors
+    extern struct Destructors
     {
         ...
         GDExtensionPtrDestructor string_destructor;
     } destructors;
 
-    struct API
+    extern struct API
     {
         ...
         GDExtensionInterfaceClassdbRegisterExtensionClassMethod classdb_register_extension_class_method;
@@ -1077,11 +1079,11 @@ added to the API.
         ...
         // API
         ...
-        api.classdb_register_extension_class_method = p_get_proc_address("classdb_register_extension_class_method");
+        api.classdb_register_extension_class_method = (GDExtensionInterfaceClassdbRegisterExtensionClassMethod)p_get_proc_address("classdb_register_extension_class_method");
 
         // Constructors.
         ...
-        constructors.string_new_with_utf8_chars = p_get_proc_address("string_new_with_utf8_chars");
+        constructors.string_new_with_utf8_chars = (GDExtensionInterfaceStringNewWithUtf8Chars)p_get_proc_address("string_new_with_utf8_chars");
 
         // Destructors.
         ...
@@ -1306,7 +1308,7 @@ infrastructure to make this work. You can see that implementing the binding
 functions inline here would take some space and also be quite repetitive. This
 also makes it easier to add another method in the future.
 
-If you compile the code and reopen the demo project, nothing will be different
+If you compile the code and reopen the Godot project, nothing will be different
 at first, since we only added two new methods. To ensure those are registered
 properly, you can search for ``GDExample`` in the editor help and verify they
 are present in the documentation page.
@@ -1328,7 +1330,7 @@ the ``api.h`` file:
 
 .. code-block:: c
 
-    struct API {
+    extern struct API {
         ...
         GDExtensionInterfaceClassdbRegisterExtensionClassProperty classdb_register_extension_class_property;
     } api;
@@ -1352,7 +1354,7 @@ In the ``api.c`` file, we can load the new API function:
     {
         // API
         ...
-        api.classdb_register_extension_class_property = p_get_proc_address("classdb_register_extension_class_property");
+        api.classdb_register_extension_class_property = (GDExtensionInterfaceClassdbRegisterExtensionClassProperty)p_get_proc_address("classdb_register_extension_class_property");
 
         ...
     }
@@ -1487,7 +1489,7 @@ We'll also add a new struct to this file, to hold function pointers for custom o
 
 .. code-block:: c
 
-    struct Operators
+    extern struct Operators
     {
         GDExtensionPtrOperatorEvaluator string_name_equal;
     } operators;
@@ -1495,6 +1497,8 @@ We'll also add a new struct to this file, to hold function pointers for custom o
 Then in the ``api.c`` file we'll load the function pointer from the API:
 
 .. code-block:: c
+
+    struct Operators operators;
 
     void load_api(GDExtensionInterfaceGetProcAddress p_get_proc_address)
     {
@@ -1614,7 +1618,7 @@ those, replacing the ``NULL`` value used previously:
     }
 
 This is enough to bind the virtual method. If you build the extension and run
-the demo project again, the ``_process()`` function will be called. You just won't
+the Godot project again, the ``_process()`` function will be called. You just won't
 be able to tell since the function itself does nothing visible. We will solve
 this now by making the custom node move following a pattern.
 
@@ -1654,7 +1658,7 @@ new one for holding engine methods to call.
 
 .. code-block:: c
 
-    struct Constructors
+    extern struct Constructors
     {
         ...
         GDExtensionPtrConstructor vector2_constructor_x_y;
@@ -1662,12 +1666,12 @@ new one for holding engine methods to call.
 
     ...
 
-    struct Methods
+    extern struct Methods
     {
         GDExtensionMethodBindPtr node2d_set_position;
     } methods;
 
-    struct API
+    extern struct API
     {
         ...
         GDExtensionInterfaceClassdbGetMethodBind classdb_get_method_bind;
@@ -1678,6 +1682,8 @@ Then in the ``api.c`` file we can grab the function pointers from Godot:
 
 .. code-block::
 
+    struct Methods methods;
+
     void load_api(GDExtensionInterfaceGetProcAddress p_get_proc_address)
     {
         // Get helper functions first.
@@ -1687,7 +1693,7 @@ Then in the ``api.c`` file we can grab the function pointers from Godot:
         // API.
         ...
         api.classdb_get_method_bind = (GDExtensionInterfaceClassdbGetMethodBind)p_get_proc_address("classdb_get_method_bind");
-        api.object_method_bind_ptrcall = p_get_proc_address("object_method_bind_ptrcall");
+        api.object_method_bind_ptrcall = (GDExtensionInterfaceObjectMethodBindPtrcall)p_get_proc_address("object_method_bind_ptrcall");
 
         // Constructors.
         ...
@@ -1807,7 +1813,7 @@ register a signal, the other is a helper function to wrap the signal binding.
 
 .. code-block:: c
 
-    struct API
+    extern struct API
     {
         ...
         GDExtensionInterfaceClassdbRegisterExtensionClassSignal classdb_register_extension_class_signal;
@@ -1834,7 +1840,7 @@ implement the helper:
     {
         // API.
         ...
-        api.classdb_register_extension_class_signal = p_get_proc_address("classdb_register_extension_class_signal");
+        api.classdb_register_extension_class_signal = (GDExtensionInterfaceClassdbRegisterExtensionClassSignal)p_get_proc_address("classdb_register_extension_class_signal");
 
         ...
     }
@@ -1928,14 +1934,14 @@ helper function for the call:
 
 .. code-block:: c
 
-    struct Constructors
+    extern struct Constructors
     {
         ...
         GDExtensionVariantFromTypeConstructorFunc variant_from_string_name_constructor;
         GDExtensionVariantFromTypeConstructorFunc variant_from_vector2_constructor;
     } constructors;
 
-    struct Destructors
+    extern struct Destructors
     {
         ..
         GDExtensionInterfaceVariantDestroy variant_destroy;
@@ -1943,13 +1949,13 @@ helper function for the call:
 
     ...
 
-    struct Methods
+    extern struct Methods
     {
         ...
         GDExtensionMethodBindPtr object_emit_signal;
     } methods;
 
-    struct API
+    extern struct API
     {
         ...
         GDExtensionInterfaceObjectMethodBindCall object_method_bind_call;
@@ -1973,7 +1979,7 @@ implement the helper function.
     {
         // API.
         ...
-        api.object_method_bind_call = p_get_proc_address("object_method_bind_call");
+        api.object_method_bind_call = (GDExtensionInterfaceObjectMethodBindCall)p_get_proc_address("object_method_bind_call");
 
         // Constructors.
         ...
@@ -1982,7 +1988,7 @@ implement the helper function.
 
         // Destructors.
         ...
-        destructors.variant_destroy = p_get_proc_address("variant_destroy");
+        destructors.variant_destroy = (GDExtensionInterfaceVariantDestroy)p_get_proc_address("variant_destroy");
 
         ...
     }
@@ -2004,8 +2010,9 @@ implement the helper function.
         // Call the function.
         api.object_method_bind_call(p_method_bind, p_instance, args, 2, &ret, NULL);
 
-        // Destroy the arguments that need it.
+        // Destroy the arguments.
         destructors.variant_destroy(&arg1);
+        destructors.variant_destroy(&arg2);
         destructors.variant_destroy(&ret);
     }
 
@@ -2107,7 +2114,7 @@ This updates the time passed for the signal emission and, if it is over one
 second it calls the ``emit_signal()`` function on the current instance, passing
 the name of the signal and the new position as arguments.
 
-Now we're done with our C GDExtension. Build it once more and reopen the demo
+Now we're done with our C GDExtension. Build it once more and reopen the Godot
 project in the editor.
 
 In the documentation page for ``GDExample`` you can see the new signal we bound:

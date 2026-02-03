@@ -86,7 +86,7 @@ Choose **Compatibility** if:
 Keep in mind every game is unique, and this is only a starting point. For example,
 you might choose to use the Compatibility renderer even though you have the latest
 GPU, so you can support the widest range of hardware. Or you might want to use the
-Forward+ renderer for a 2D game, so you can advanced features like compute shaders.
+Forward+ renderer for a 2D game, so you can use advanced features like compute shaders.
 
 Switching between renderers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -261,7 +261,7 @@ See :ref:`doc_environment_and_post_processing` for more information.
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Screen-Space Reflections| ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
 +-------------------------+--------------------------+--------------------------+--------------------------+
-| Screen-Space Ambient    | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
+| Screen-Space Ambient    | ✔️ Supported.            | ❌ Not supported.        | ✔️ Supported.            |
 | Occlusion (SSAO)        |                          |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Screen-Space            | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
@@ -331,7 +331,7 @@ See :ref:`doc_shading_reference` for more information.
 | Depth texture           | ✔️ Supported.            | ✔️ Supported.            | ✔️ Supported.            |
 |                         |                          |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
-| Normal/Roughness texture| ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
+| Normal/Roughness buffer | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Compute shaders         | ❌ Not supported.        | ⚠️ Supported, but comes  | ✔️ Supported.            |
 |                         |                          | with a performance       |                          |
@@ -348,6 +348,10 @@ Other features
 | shading                 |                          |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Decals                  | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
++-------------------------+--------------------------+--------------------------+--------------------------+
+| Particle trails         | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
++-------------------------+--------------------------+--------------------------+--------------------------+
+| Particle SDF collision  | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Depth of field blur     | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
 +-------------------------+--------------------------+--------------------------+--------------------------+

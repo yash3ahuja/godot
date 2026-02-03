@@ -15,7 +15,6 @@ Requirements
 
 For compiling under Windows, the following is required:
 
-
 - A C++ compiler. Use one of the following:
 
     - `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
@@ -36,6 +35,8 @@ For compiling under Windows, the following is required:
 - `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system. Using the
   latest release is recommended, especially for proper support of recent Visual
   Studio releases.
+- :ref:`Direct3D 12 dependencies <doc_compiling_for_windows_installing_d3d12_requirements>`
+  (can be skipped with the ``d3d12=no`` SCons option if Direct3D 12 support is not desired).
 
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
           install MinGW and other dependencies using the following command:
@@ -182,17 +183,21 @@ dependencies. Running it will bring up the Project Manager.
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
-Compiling with support for Direct3D 12
---------------------------------------
+.. _doc_compiling_for_windows_installing_d3d12_requirements:
 
-By default, builds of Godot do not contain support for the Direct3D 12 graphics
-API.
+Installing Direct3D 12 requirements
+-----------------------------------
+
+By default, Windows builds of Godot contain support for the Direct3D 12 graphics
+API. Compiling with Direct3D 12 support requires additional dependencies
+to be installed. If you wish to skip this step, you can use the ``d3d12=no``
+SCons option; Vulkan and OpenGL support will remain available if you do so.
 
 You can install the required dependencies by running
 ``python misc/scripts/install_d3d12_sdk_windows.py``
-in the Godot source repository. After running this script, add the ``d3d12=yes``
-SCons option to enable Direct3D 12 support. This will use the default paths for
-the various dependencies, which match the ones used in the script.
+in the Godot source repository. After running this script, compile Godot as usual.
+This will use the default paths for the various dependencies, which match the
+ones used in the script.
 
 You can find the detailed steps below if you wish to set up dependencies
 manually, but the above script handles everything for you (including the
@@ -218,18 +223,18 @@ optional PIX and Agility SDK components).
               ./update_mesa.sh
               scons
 
-             If you are building with MinGW-w64, add ``use_mingw=yes`` to the ``scons``
-             command, you can also specify build architecture using ``arch={architecture}``.
-             If you are building with MinGW-LLVM, add both ``use_mingw=yes`` and
-             ``use_llvm=yes`` to the ``scons`` command.
+          If you are building with MinGW-w64, add ``use_mingw=yes`` to the ``scons``
+          command, you can also specify the build architecture using ``arch={architecture}``.
+          If you are building with MinGW-LLVM, add both ``use_mingw=yes`` and
+          ``use_llvm=yes`` to the ``scons`` command.
 
-             If you are building with MinGW and the binaries are not located in
-             the ``PATH``, add ``mingw_prefix="/path/to/mingw"`` to the ``scons``
-             command.
+          If you are building with MinGW and the binaries are not located in
+          the ``PATH``, add ``mingw_prefix="/path/to/mingw"`` to the ``scons``
+          command.
 
-             Mesa static library should be built using the same compiler and the
-             same CRT (if you are building with MinGW) you are using for building
-             Godot.
+          The Mesa static library should be built using the same compiler and the
+          same CRT (if you are building with MinGW) you are using for building
+          Godot.
 
 Optionally, you can compile with the following for additional features:
 
@@ -263,24 +268,70 @@ Optionally, you can compile with the following for additional features:
             gendef ./bin/ARM64/WinPixEventRuntime.dll
             dlltool --machine arm64 --no-leading-underscore -d WinPixEventRuntime.def -D WinPixEventRuntime.dll -l ./bin/ARM64/libWinPixEventRuntime.a
 
-When building Godot, you will need to tell SCons to use Direct3D 12 and where to
-look for the additional libraries:
+When building Godot, you will need to tell SCons where to look for the additional libraries:
 
 .. code-block:: doscon
 
-    C:\godot> scons platform=windows d3d12=yes mesa_libs=<...>
+    C:\godot> scons platform=windows mesa_libs=<...>
 
 Or, with all options enabled:
 
 .. code-block:: doscon
 
-    C:\godot> scons platform=windows d3d12=yes mesa_libs=<...> agility_sdk_path=<...> pix_path=<...>
+    C:\godot> scons platform=windows mesa_libs=<...> agility_sdk_path=<...> pix_path=<...>
 
-.. note:: For the Agility SDK's DLLs you have to explicitly choose the kind of
-          workflow. Single-arch is the default (DLLs copied to ``bin/``). If you
-          pass ``agility_sdk_multi_arch=yes`` to SCons, you'll opt-in for
-          multi-arch. DLLs will be copied to the appropriate ``bin/<arch>/``
-          subdirectories and at runtime the right one will be loaded.
+.. note::
+
+    PIX support is disabled by default, even if you have it installed.
+    To enable it, pass ``use_pix=yes`` to SCons.
+
+.. note::
+
+    For the Agility SDK's DLLs, you have to explicitly choose the kind of
+    workflow. Single-arch is the default (DLLs copied to ``bin/``). If you pass
+    ``agility_sdk_multi_arch=yes`` to SCons, you'll opt-in for multi-arch.
+    DLLs will be copied to the appropriate ``bin/<arch>/`` subdirectories
+    and at runtime, the right one will be loaded.
+
+Compiling with AccessKit support
+--------------------------------
+
+AccessKit provides support for screen readers.
+
+By default, Godot is built with AccessKit dynamically linked. You can use it by placing
+``accesskit.dll`` alongside the executable.
+
+.. note:: You can use dynamically linked AccessKit with export templates as well, rename
+          the DLL to ``accesskit.{architecture}.dll``
+          and place them alongside the export template executables, and the libraries will
+          be automatically copied during the export process.
+
+To compile Godot with statically linked AccessKit:
+
+- Download the pre-built static libraries from `godot-accesskit-c-static library <https://github.com/godotengine/godot-accesskit-c-static/releases>`_, and unzip them.
+- When building Godot, add ``accesskit_sdk_path={path}`` to tell SCons where to look for the AccessKit libraries:
+
+    ::
+
+        scons platform=windows accesskit_sdk_path=<...>
+
+.. note:: You can optionally build the godot-angle-static libraries yourself with
+          the following steps:
+
+          1. Clone the `godot-accesskit-c-static <https://github.com/godotengine/godot-accesskit-c-static/>`_
+             directory and navigate to it.
+          2. Run the following command:
+
+          ::
+
+              cd accesskit-c
+              cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+              cmake --build build
+              cmake --install build
+
+          The AccessKit static library should be built using the same compiler and the
+          same CRT (if you are building with MinGW) you are using for building
+          Godot.
 
 Compiling with ANGLE support
 ----------------------------
@@ -293,13 +344,13 @@ By default, Godot is built with dynamically linked ANGLE, you can use it by plac
 ``libEGL.dll`` and ``libGLESv2.dll`` alongside the executable.
 
 .. note:: You can use dynamically linked ANGLE with export templates as well, rename
-          aforementioned DLLs to ``libEGL.{architecture}.dll`` and ``libGLESv2.{architecture}.dll``
-          and place them alongside export template executables, and libraries will
+          the DLLs to ``libEGL.{architecture}.dll`` and ``libGLESv2.{architecture}.dll``
+          and place them alongside the export template executables, and the libraries will
           be automatically copied during the export process.
 
 To compile Godot with statically linked ANGLE:
 
-- Download pre-built static libraries from `godot-angle-static library <https://github.com/godotengine/godot-angle-static/releases>`_, and unzip them.
+- Download the pre-built static libraries from `godot-angle-static library <https://github.com/godotengine/godot-angle-static/releases>`_, and unzip them.
 - When building Godot, add ``angle_libs={path}`` to tell SCons where to look for the ANGLE libraries:
 
     ::
@@ -319,18 +370,18 @@ To compile Godot with statically linked ANGLE:
               ./update_angle.sh
               scons
 
-             If you are buildng with MinGW, add ``use_mingw=yes`` to the command,
-             you can also specify build architecture using ``arch={architecture}``.
-             If you are building with MinGW-LLVM, add both ``use_mingw=yes`` and
-             ``use_llvm=yes`` to the ``scons`` command.
+          If you are buildng with MinGW, add ``use_mingw=yes`` to the command,
+          you can also specify the build architecture using ``arch={architecture}``.
+          If you are building with MinGW-LLVM, add both ``use_mingw=yes`` and
+          ``use_llvm=yes`` to the ``scons`` command.
 
-             If you are building with MinGW and the binaries are not located in
-             the ``PATH``, add ``mingw_prefix="/path/to/mingw"`` to the ``scons``
-             command.
+          If you are building with MinGW and the binaries are not located in
+          the ``PATH``, add ``mingw_prefix="/path/to/mingw"`` to the ``scons``
+          command.
 
-             ANGLE static library should be built using the same compiler and the
-             same CRT (if you are building with MinGW) you are using for building
-             Godot.
+          The ANGLE static library should be built using the same compiler and the
+          same CRT (if you are building with MinGW) you are using for building
+          Godot.
 
 Development in Visual Studio
 ----------------------------
