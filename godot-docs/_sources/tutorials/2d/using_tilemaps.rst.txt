@@ -88,7 +88,8 @@ Navigation
     After designing the TileMap consider baking it to a more optimized navigation mesh (and disabling the TileMap NavigationLayer) using a :ref:`NavigationRegion2D <class_NavigationRegion2D>` or the :ref:`NavigationServer2D <class_NavigationServer2D>`. See :ref:`doc_navigation_using_navigationmeshes` for additional information.
 
 .. warning::
-    2D navigation meshes can not be "layered" or stacked on top of each other like visuals or physic shapes. Attempting to stack navigation meshes on the same navigation map will result in merge and logical errors that break the pathfinding.
+
+    2D navigation meshes can not be "layered" or stacked on top of each other like visuals or physics shapes. Attempting to stack navigation meshes on the same navigation map will result in merge and logical errors that break the pathfinding.
 
 Reordering layers
 ~~~~~~~~~~~~~~~~~
@@ -217,7 +218,7 @@ then performing a selection.
     You can copy and paste tiles that were already placed by performing a
     selection, pressing :kbd:`Ctrl + C` then pressing :kbd:`Ctrl + V`.
     The selection will be pasted after left-clicking. You can press
-    :kbd:`Ctrl + V` another time to perform more copies this way.
+    :kbd:`Ctrl + V` another time to perform more pastes this way.
     Right-click or press :kbd:`Escape` to cancel pasting.
 
 Paint

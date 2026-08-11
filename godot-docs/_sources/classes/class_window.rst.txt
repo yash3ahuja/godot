@@ -25,6 +25,15 @@ A node that creates a window. The window can either be a native system window or
 
 At runtime, **Window**\ s will not close automatically when requested. You need to handle it manually using the :ref:`close_requested<class_Window_signal_close_requested>` signal (this applies both to pressing the close button and clicking outside of a popup).
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`HDR output <../tutorials/rendering/hdr_output>`
+
+- `Multiple Windows demo <https://github.com/godotengine/godot-demo-projects/tree/master/misc/multiple_windows>`__
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -63,6 +72,8 @@ Properties
    | :ref:`bool<class_bool>`                                         | :ref:`extend_to_title<class_Window_property_extend_to_title>`                     | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`force_native<class_Window_property_force_native>`                           | ``false``                |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`hdr_output_requested<class_Window_property_hdr_output_requested>`           | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` | :ref:`initial_position<class_Window_property_initial_position>`                   | ``0``                    |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
@@ -153,6 +164,8 @@ Methods
    | :ref:`Window<class_Window>`                         | :ref:`get_focused_window<class_Window_method_get_focused_window>`\ (\ ) |static|                                                                                                                                                                        |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`LayoutDirection<enum_Window_LayoutDirection>` | :ref:`get_layout_direction<class_Window_method_get_layout_direction>`\ (\ ) |const|                                                                                                                                                                     |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`get_output_max_linear_value<class_Window_method_get_output_max_linear_value>`\ (\ ) |const|                                                                                                                                                       |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`                     | :ref:`get_position_with_decorations<class_Window_method_get_position_with_decorations>`\ (\ ) |const|                                                                                                                                                   |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -263,6 +276,10 @@ Methods
    | |void|                                              | :ref:`set_ime_position<class_Window_method_set_ime_position>`\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ )                                                                                                                                         |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_layout_direction<class_Window_method_set_layout_direction>`\ (\ direction\: :ref:`LayoutDirection<enum_Window_LayoutDirection>`\ )                                                                                                            |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_taskbar_progress_state<class_Window_method_set_taskbar_progress_state>`\ (\ state\: :ref:`ProgressState<enum_DisplayServer_ProgressState>`\ )                                                                                                 |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_taskbar_progress_value<class_Window_method_set_taskbar_progress_value>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                              |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when_invisible>`\ (\ unparent\: :ref:`bool<class_bool>`\ )                                                                                                                           |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -454,6 +471,18 @@ Emitted when the mouse event is received by the custom decoration area defined b
 
 ----
 
+.. _class_Window_signal_output_max_linear_value_changed:
+
+.. rst-class:: classref-signal
+
+**output_max_linear_value_changed**\ (\ output_max_linear_value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Window_signal_output_max_linear_value_changed>`
+
+Emitted when the output max linear value returned by :ref:`get_output_max_linear_value()<class_Window_method_get_output_max_linear_value>` has changed. This occurs when HDR output is enabled or disabled and when any HDR output luminance values of the window have changed, such as when the player adjusts their screen brightness setting or moves the window to a different screen. ``output_max_linear_value`` is the new value.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_signal_theme_changed:
 
 .. rst-class:: classref-signal
@@ -607,6 +636,8 @@ enum **Flags**: :ref:`🔗<enum_Window_Flags>`
 
 The window can't be resized by dragging its resize grip. It's still possible to resize the window using :ref:`size<class_Window_property_size>`. This flag is ignored for full screen windows. Set with :ref:`unresizable<class_Window_property_unresizable>`.
 
+\ **Note:** This flag is implemented on Linux (X11), macOS, Windows, and embedded windows.
+
 .. _class_Window_constant_FLAG_BORDERLESS:
 
 .. rst-class:: classref-enumeration-constant
@@ -615,6 +646,8 @@ The window can't be resized by dragging its resize grip. It's still possible to 
 
 The window do not have native title bar and other decorations. This flag is ignored for full-screen windows. Set with :ref:`borderless<class_Window_property_borderless>`.
 
+\ **Note:** This flag is implemented on Linux (X11/Wayland), macOS, Windows, and embedded windows.
+
 .. _class_Window_constant_FLAG_ALWAYS_ON_TOP:
 
 .. rst-class:: classref-enumeration-constant
@@ -622,6 +655,8 @@ The window do not have native title bar and other decorations. This flag is igno
 :ref:`Flags<enum_Window_Flags>` **FLAG_ALWAYS_ON_TOP** = ``2``
 
 The window is floating on top of all other windows. This flag is ignored for full-screen windows. Set with :ref:`always_on_top<class_Window_property_always_on_top>`.
+
+\ **Note:** This flag is implemented on Linux (X11), macOS, Windows, and embedded windows.
 
 .. _class_Window_constant_FLAG_TRANSPARENT:
 
@@ -633,6 +668,8 @@ The window background can be transparent. Set with :ref:`transparent<class_Windo
 
 \ **Note:** This flag has no effect if either :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`, or the window's :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` is set to ``false``.
 
+\ **Note:** Transparency support is implemented on Linux (X11/Wayland), macOS, Windows, and embedded windows.
+
 .. _class_Window_constant_FLAG_NO_FOCUS:
 
 .. rst-class:: classref-enumeration-constant
@@ -640,6 +677,8 @@ The window background can be transparent. Set with :ref:`transparent<class_Windo
 :ref:`Flags<enum_Window_Flags>` **FLAG_NO_FOCUS** = ``4``
 
 The window can't be focused. No-focus window will ignore all input, except mouse clicks. Set with :ref:`unfocusable<class_Window_property_unfocusable>`.
+
+\ **Note:** This flag is implemented on Linux (X11), macOS, Windows, and embedded windows.
 
 .. _class_Window_constant_FLAG_POPUP:
 
@@ -649,7 +688,7 @@ The window can't be focused. No-focus window will ignore all input, except mouse
 
 Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This flag can't be changed when the window is visible. An active popup window will exclusively receive all input, without stealing focus from its parent. Popup windows are automatically closed when uses click outside it, or when an application is switched. Popup window must have transient parent set (see :ref:`transient<class_Window_property_transient>`).
 
-\ **Note:** This flag has no effect in embedded windows (unless said window is a :ref:`Popup<class_Popup>`).
+\ **Note:** This flag is implemented on Linux (X11/Wayland), macOS, Windows, and embedded :ref:`Popup<class_Popup>` windows.
 
 .. _class_Window_constant_FLAG_EXTEND_TO_TITLE:
 
@@ -659,9 +698,9 @@ Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This
 
 Window content is expanded to the full size of the window. Unlike borderless window, the frame is left intact and can be used to resize the window, title bar is transparent, but have minimize/maximize/close buttons. Set with :ref:`extend_to_title<class_Window_property_extend_to_title>`.
 
-\ **Note:** This flag is implemented only on macOS.
-
 \ **Note:** This flag has no effect in embedded windows.
+
+\ **Note:** This flag is implemented only on macOS.
 
 .. _class_Window_constant_FLAG_MOUSE_PASSTHROUGH:
 
@@ -672,6 +711,8 @@ Window content is expanded to the full size of the window. Unlike borderless win
 All mouse events are passed to the underlying window of the same application.
 
 \ **Note:** This flag has no effect in embedded windows.
+
+\ **Note:** This flag is implemented on Linux (X11), macOS, Windows.
 
 .. _class_Window_constant_FLAG_SHARP_CORNERS:
 
@@ -707,6 +748,10 @@ Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_ima
 
 Signals the window manager that this window is supposed to be an implementation-defined "popup" (usually a floating, borderless, untileable and immovable child window).
 
+\ **Note:** This flag has no effect in embedded windows.
+
+\ **Note:** This flag is implemented on Linux (Wayland).
+
 .. _class_Window_constant_FLAG_MINIMIZE_DISABLED:
 
 .. rst-class:: classref-enumeration-constant
@@ -715,7 +760,9 @@ Signals the window manager that this window is supposed to be an implementation-
 
 Window minimize button is disabled.
 
-\ **Note:** This flag is implemented on macOS and Windows.
+\ **Note:** This flag has no effect in embedded windows.
+
+\ **Note:** This flag is implemented on Linux (X11), macOS, and Windows.
 
 .. _class_Window_constant_FLAG_MAXIMIZE_DISABLED:
 
@@ -725,7 +772,9 @@ Window minimize button is disabled.
 
 Window maximize button is disabled.
 
-\ **Note:** This flag is implemented on macOS and Windows.
+\ **Note:** This flag has no effect in embedded windows.
+
+\ **Note:** This flag is implemented on Linux (X11), macOS, and Windows.
 
 .. _class_Window_constant_FLAG_MAX:
 
@@ -1279,6 +1328,23 @@ If ``true``, the **Window** contents is expanded to the full size of the window,
 - :ref:`bool<class_bool>` **get_force_native**\ (\ )
 
 If ``true``, native window will be used regardless of parent viewport and project settings.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_property_hdr_output_requested:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **hdr_output_requested** = ``false`` :ref:`🔗<class_Window_property_hdr_output_requested>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_hdr_output_requested**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_hdr_output_requested**\ (\ )
+
+If ``true``, requests HDR output for the **Window**, falling back to SDR if not supported, and automatically switching between HDR and SDR as the window moves between screens, screen capabilities change, or system settings are modified. This will internally force :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` to be enabled on the main :ref:`Viewport<class_Viewport>`. All other :ref:`SubViewport<class_SubViewport>` of this **Window** must have their :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` property enabled to produce HDR output.
 
 .. rst-class:: classref-item-separator
 
@@ -1978,6 +2044,51 @@ Returns the focused window.
 :ref:`LayoutDirection<enum_Window_LayoutDirection>` **get_layout_direction**\ (\ ) |const| :ref:`🔗<class_Window_method_get_layout_direction>`
 
 Returns layout direction and text writing direction.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_get_output_max_linear_value:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_output_max_linear_value**\ (\ ) |const| :ref:`🔗<class_Window_method_get_output_max_linear_value>`
+
+Returns the maximum value for linear color components that can be displayed in this window, regardless of SDR or HDR output. Returns ``1.0`` if HDR is not enabled or not supported. The :ref:`output_max_linear_value_changed<class_Window_signal_output_max_linear_value_changed>` signal will be emitted whenever this value changes.
+
+This value is used by tonemapping and other :ref:`Environment<class_Environment>` effects to ensure that bright colors are presented in the range that can be displayed by this window. When using this maximum linear value in your project, it should only be used to present colors directly to the screen without tonemapping and without influencing lighting, post-processing effects, or surrounding color. The following is an example that produces the brightest purple color that the screen can produce:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _process(_delta):
+        # output_max_linear_value may change often, so do this every frame.
+        var max_linear_value = get_window().get_output_max_linear_value()
+        # Replace this with your color:
+        var original_color = Color.PURPLE
+        # Normalize to max_linear_value to produce the brightest color possible,
+        # regardless of SDR or HDR output:
+        var bright_color = normalize_color(original_color, max_linear_value)
+
+
+    func normalize_color(srgb_color, max_linear_value = 1.0):
+        # Color must be linear-encoded to use math operations.
+        var linear_color = srgb_color.srgb_to_linear()
+        var max_rgb_value = maxf(linear_color.r, maxf(linear_color.g, linear_color.b))
+        var brightness_scale = max_linear_value / max_rgb_value
+        linear_color *= brightness_scale
+        # Undo changes to the alpha channel, which should not be modified.
+        linear_color.a = srgb_color.a
+        # Convert back to nonlinear sRGB encoding, which is required for Color in
+        # Godot unless stated otherwise.
+        return linear_color.linear_to_srgb()
+
+
+
+\ **Note:** You will need to convert sRGB colors to linear before multiplying by this value to get correct results.
 
 .. rst-class:: classref-item-separator
 
@@ -2708,6 +2819,36 @@ Moves IME to the given position.
 |void| **set_layout_direction**\ (\ direction\: :ref:`LayoutDirection<enum_Window_LayoutDirection>`\ ) :ref:`🔗<class_Window_method_set_layout_direction>`
 
 Sets layout direction and text writing direction. Right-to-left layouts are necessary for certain languages (e.g. Arabic and Hebrew).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_set_taskbar_progress_state:
+
+.. rst-class:: classref-method
+
+|void| **set_taskbar_progress_state**\ (\ state\: :ref:`ProgressState<enum_DisplayServer_ProgressState>`\ ) :ref:`🔗<class_Window_method_set_taskbar_progress_state>`
+
+Sets the type and state of the progress bar on the taskbar/dock icon of the **Window**. See :ref:`ProgressState<enum_DisplayServer_ProgressState>` for possible values and how each mode behaves.
+
+\ **Note:** This method is implemented only on Windows and macOS.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_set_taskbar_progress_value:
+
+.. rst-class:: classref-method
+
+|void| **set_taskbar_progress_value**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Window_method_set_taskbar_progress_value>`
+
+Creates a progress bar on the taskbar/dock icon of the **Window** if it does not exist, sets the progress of the icon.
+
+\ ``value`` acts as a relative percentage value, ranges from ``0.0`` (lowest) to ``1.0`` (highest).
+
+\ **Note:** This method is implemented only on Windows and macOS.
 
 .. rst-class:: classref-item-separator
 

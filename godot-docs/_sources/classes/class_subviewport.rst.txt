@@ -65,6 +65,8 @@ Properties
    +------------------------------------------------+----------------------------------------------------------------------------------------+------------------------+
    | :ref:`bool<class_bool>`                        | :ref:`size_2d_override_stretch<class_SubViewport_property_size_2d_override_stretch>`   | ``false``              |
    +------------------------------------------------+----------------------------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`                          | :ref:`view_count<class_SubViewport_property_view_count>`                               | ``1``                  |
+   +------------------------------------------------+----------------------------------------------------------------------------------------+------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -248,6 +250,23 @@ The 2D size override of the sub-viewport. If either the width or height is ``0``
 - :ref:`bool<class_bool>` **is_size_2d_override_stretch_enabled**\ (\ )
 
 If ``true``, the 2D size override affects stretch as well.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SubViewport_property_view_count:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **view_count** = ``1`` :ref:`🔗<class_SubViewport_property_view_count>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_view_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_view_count**\ (\ )
+
+The number of view layers we are rendering to. Set this to ``2`` to enable stereo rendering.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

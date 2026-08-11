@@ -28,6 +28,10 @@ An instance of this class can be obtained with :ref:`AudioServer.get_bus_effect_
 Tutorials
 ---------
 
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
+
+- :doc:`Audio effects <../tutorials/audio/audio_effects>`
+
 - `Audio Spectrum Visualizer Demo <https://godotengine.org/asset-library/asset/2762>`__
 
 .. rst-class:: classref-reftable-group

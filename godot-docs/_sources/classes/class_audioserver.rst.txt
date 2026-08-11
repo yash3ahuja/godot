@@ -684,7 +684,7 @@ Returns the speaker configuration.
 
 :ref:`float<class_float>` **get_time_since_last_mix**\ (\ ) |const| :ref:`🔗<class_AudioServer_method_get_time_since_last_mix>`
 
-Returns the relative time since the last mix occurred.
+Returns the relative time since the last mix occurred, in seconds.
 
 .. rst-class:: classref-item-separator
 
@@ -696,7 +696,7 @@ Returns the relative time since the last mix occurred.
 
 :ref:`float<class_float>` **get_time_to_next_mix**\ (\ ) |const| :ref:`🔗<class_AudioServer_method_get_time_to_next_mix>`
 
-Returns the relative time until the next mix occurs.
+Returns the relative time until the next mix occurs, in seconds.
 
 .. rst-class:: classref-item-separator
 

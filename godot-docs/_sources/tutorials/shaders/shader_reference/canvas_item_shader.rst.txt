@@ -119,15 +119,15 @@ is usually:
 |                                | coordinates range from ``(-1.0, -1.0)`` to                     |
 |                                | ``(1.0, 1.0).``                                                |
 +--------------------------------+----------------------------------------------------------------+
-| in int  **INSTANCE_ID**        | Instance ID for instancing.                                    |
+| in int **INSTANCE_ID**         | Instance ID for instancing.                                    |
 +--------------------------------+----------------------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                                          |
 +--------------------------------+----------------------------------------------------------------+
 | in bool **AT_LIGHT_PASS**      | Always ``false``.                                              |
 +--------------------------------+----------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of the default 2D texture.               |
-|                                | For a Sprite2D with a texture of size 64x32px,                 |
-|                                | **TEXTURE_PIXEL_SIZE** = ``vec2(1.0/64.0, 1.0/32.0)``          |
+|                                | For a Sprite2D with a texture of size 64×32 pixels,            |
+|                                | ``TEXTURE_PIXEL_SIZE`` = ``vec2(1.0 / 64.0, 1.0 / 32.0)``.     |
 +--------------------------------+----------------------------------------------------------------+
 | inout vec2 **VERTEX**          | Vertex position, in local space.                               |
 +--------------------------------+----------------------------------------------------------------+
@@ -219,21 +219,27 @@ it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D
 +=============================================+===============================================================+
 | in vec4 **FRAGCOORD**                       | Coordinate of pixel center. In screen space. ``xy`` specifies |
 |                                             | position in viewport. Upper-left of the viewport is the       |
-|                                             | origin, ``(0.0, 0.0)``.                                       |
+|                                             | origin, ``(0.0, 0.0)``. Bottom-right of the viewport is       |
+|                                             | ``(1.0, 1.0)``.                                               |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **SCREEN_PIXEL_SIZE**               | Size of individual pixels. Equal to the inverse of resolution.|
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec4 **REGION_RECT**                     | Visible area of the sprite region in format                   |
 |                                             | ``(x, y, width, height)``. Varies according to                |
-|                                             | Sprite2D's ``region_enabled`` property.                       |
+|                                             | Sprite2D's ``region_enabled`` property. Values are            |
+|                                             | normalized; for example, a 600×400 region on a 1000×800       |
+|                                             | texture with a 100×100 offset would be                        |
+|                                             | ``vec4(0.1, 0.125, 0.6, 0.5)``. Values may exceed the 0.0 to  |
+|                                             | 1.0 range if the X/Y offset is negative, or if the size       |
+|                                             | exceeds the texture's size.                                   |
 +---------------------------------------------+---------------------------------------------------------------+
-| in vec2 **POINT_COORD**                     | Coordinate for drawing points.                                |
+| in vec2 **POINT_COORD**                     | Coordinate for drawing points in the 0.0 to 1.0 range.        |
 +---------------------------------------------+---------------------------------------------------------------+
 | sampler2D **TEXTURE**                       | Default 2D texture.                                           |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE**              | Normalized pixel size of the default 2D texture.              |
-|                                             | For a Sprite2D with a texture of size 64x32px,                |
-|                                             | ``TEXTURE_PIXEL_SIZE`` = ``vec2(1/64, 1/32)``                 |
+|                                             | For a Sprite2D with a texture of size 64×32 pixels,           |
+|                                             | ``TEXTURE_PIXEL_SIZE`` = ``vec2(1.0 / 64.0, 1.0 / 32.0)``.    |
 +---------------------------------------------+---------------------------------------------------------------+
 | in bool **AT_LIGHT_PASS**                   | Always ``false``.                                             |
 +---------------------------------------------+---------------------------------------------------------------+
@@ -300,7 +306,7 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 +==================================+==============================================================================+
 | in vec4 **FRAGCOORD**            | Coordinate of pixel center. In screen space. ``xy`` specifies                |
 |                                  | position in viewport. Upper-left of the viewport is the origin,              |
-|                                  | ``(0.0, 0.0)``.                                                              |
+|                                  | ``(0.0, 0.0)``. Bottom-right of the viewport is ``(1.0, 1.0)``.              |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec3 **NORMAL**               | Input normal.                                                                |
 +----------------------------------+------------------------------------------------------------------------------+
@@ -312,8 +318,8 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 | sampler2D **TEXTURE**            | Current texture in use for the CanvasItem.                                   |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE**   | Normalized pixel size of ``TEXTURE``.                                        |
-|                                  | For a Sprite2D with a ``TEXTURE`` of size ``64x32`` pixels,                  |
-|                                  | **TEXTURE_PIXEL_SIZE** = ``vec2(1/64, 1/32)``                                |
+|                                  | For a Sprite2D with a ``TEXTURE`` of size 64×32 pixels,                      |
+|                                  | ``TEXTURE_PIXEL_SIZE`` = ``vec2(1.0 / 64.0, 1.0 / 32.0)``.                   |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec2 **SCREEN_UV**            | Screen UV coordinate for the current pixel.                                  |
 +----------------------------------+------------------------------------------------------------------------------+

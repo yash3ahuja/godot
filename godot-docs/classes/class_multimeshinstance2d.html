@@ -12,23 +12,23 @@
 <meta property="og:description" content="Inherits: Node2D&lt; CanvasItem&lt; Node&lt; Object Node that instances a MultiMesh in 2D. Description: MultiMeshInstance2D is a specialized node to instance a MultiMesh resource in 2D. This can be..." />
 <meta name="description" content="Inherits: Node2D&lt; CanvasItem&lt; Node&lt; Object Node that instances a MultiMesh in 2D. Description: MultiMeshInstance2D is a specialized node to instance a MultiMesh resource in 2D. This can be..." />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>(DEV) MultiMeshInstance2D &mdash; Godot Engine (4.6) documentation in English</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>(DEV) MultiMeshInstance2D &mdash; Godot Engine (4.7) documentation in English</title>
 
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=cd213ed2" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=8c39be60" />
       <link rel="stylesheet" type="text/css" href="../_static/css/dev.css?v=b28a5b3c" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=f0a44209"></script>
+      <script src="../_static/documentation_options.js?v=54dcc610"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../_static/copybutton.js?v=f281be69"></script>
-      <script src="../_static/js/custom.js?v=b8b27376"></script>
+      <script src="../_static/js/custom.js?v=156b5a5e"></script>
       <script data-domain="godotengine.org" defer="defer" src="https://plausible.godot.foundation/js/script.file-downloads.outbound-links.js"></script>
     <script src="../_static/js/theme.js"></script><meta name="theme-color" content="#3d8fcc" />
   
@@ -36,7 +36,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MultiMeshInstance3D" href="class_multimeshinstance3d.html" />
     <link rel="prev" title="ModifierBoneTarget3D" href="class_modifierbonetarget3d.html" />
-<meta name="doc_version" content="4.6" />
+<meta name="doc_version" content="4.7" />
 <meta name="doc_is_latest" content="False" />
 <meta name="doc_pagename" content="classes/class_multimeshinstance2d" />
 
@@ -177,19 +177,31 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../about/docs_changelog.html">Documentation changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-4-4">New pages since version 4.4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-4-6">New pages since version 4.6</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#editor">Editor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#gdextension">GDExtension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#user-interface-ui">User Interface (UI)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-4-5">New pages since version 4.5</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#input">Input</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#migrating">Migrating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#platform-specific">Platform-specific</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#scripting">Scripting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-4-4">New pages since version 4.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id1">Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#gdextension">GDExtension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id2">Migrating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id3">Scripting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-4-3">New pages since version 4.3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#d">2D</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id1">3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id4">3D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#debug">Debug</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id2">Editor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id3">Migrating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id5">Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id6">Migrating</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#performance">Performance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#physics">Physics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#rendering">Rendering</a></li>
@@ -198,46 +210,46 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-4-2">New pages since version 4.2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#about">About</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id4">2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id7">2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#contributing">Contributing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id5">GDExtension</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id6">Migrating</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id7">Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id8">GDExtension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id9">Migrating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id10">Rendering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#xr">XR</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-4-1">New pages since version 4.1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#c">C#</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#development">Development</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id8">Migrating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id11">Migrating</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#i-o">I/O</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#platform-specific">Platform-specific</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id12">Platform-specific</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-4-0">New pages since version 4.0</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id9">Development</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id10">Migrating</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id11">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id13">Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id14">Migrating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id15">Physics</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-3-6">New pages since version 3.6</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id12">2D</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id13">3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id16">2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id17">3D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#animation">Animation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#assets-pipeline">Assets pipeline</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id14">Development</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id15">Migrating</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id16">Physics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id17">Scripting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id18">Shaders</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id19">XR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id18">Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id19">Migrating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id20">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id21">Scripting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id22">Shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id23">XR</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-3-5">New pages since version 3.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-3-4">New pages since version 3.4</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id20">3D</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id21">Animation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id22">Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id24">3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id25">Animation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id26">Editor</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-3-3">New pages since version 3.3</a><ul>
@@ -245,26 +257,26 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-3-2">New pages since version 3.2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id23">3D</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id24">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id27">3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id28">About</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#best-practices">Best practices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id25">Development</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id26">Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id29">Development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id30">Editor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#export">Export</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id31">Input</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#math">Math</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id27">Platform-specific</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id28">Physics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id29">Shaders</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id30">Scripting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#user-interface-ui">User Interface (UI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id32">Platform-specific</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id33">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id34">Shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id35">Scripting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id36">User Interface (UI)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-3-1">New pages since version 3.1</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#project-workflow">Project workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id31">2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id37">2D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#audio">Audio</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id32">Math</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id38">Math</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#inputs">Inputs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#internationalization">Internationalization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#shading">Shading</a></li>
@@ -278,19 +290,19 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../about/docs_changelog.html#new-pages-since-version-3-0">New pages since version 3.0</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#step-by-step">Step by step</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id33">Scripting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id34">Project workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id35">2D</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id36">3D</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id37">Physics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id38">Animation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id39">Scripting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id40">Project workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id41">2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id42">3D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id43">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id44">Animation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#gui">GUI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#viewports">Viewports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id39">Shading</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id40">Plugins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id41">Platform-specific</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id42">Multi-threading</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id43">Creating content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id45">Shading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id46">Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id47">Platform-specific</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id48">Multi-threading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#id49">Creating content</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#miscellaneous">Miscellaneous</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#compiling">Compiling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../about/docs_changelog.html#engine-development">Engine development</a></li>
@@ -528,10 +540,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/best_practices/scenes_versus_scripts.html#conclusion">Conclusion</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/best_practices/autoloads_versus_internal_nodes.html">Autoloads versus regular nodes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/best_practices/autoloads_versus_internal_nodes.html#the-cutting-audio-issue">The cutting audio issue</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/best_practices/autoloads_versus_internal_nodes.html#managing-shared-functionality-or-data">Managing shared functionality or data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/best_practices/autoloads_versus_internal_nodes.html#when-you-should-use-an-autoload">When you should use an Autoload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/best_practices/autoloads_versus_regular_nodes.html">Autoloads versus regular nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/best_practices/autoloads_versus_regular_nodes.html#the-cutting-audio-issue">The cutting audio issue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/best_practices/autoloads_versus_regular_nodes.html#managing-shared-functionality-or-data">Managing shared functionality or data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/best_practices/autoloads_versus_regular_nodes.html#when-you-should-use-an-autoload">When you should use an Autoload</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/best_practices/node_alternatives.html">When and how to avoid using nodes for everything</a></li>
@@ -591,7 +603,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#some-text-such-as-no-dc-appears-in-the-top-left-corner-of-the-project-manager-and-editor-window">Some text such as &quot;NO DC&quot; appears in the top-left corner of the Project Manager and editor window</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#a-microphone-or-refresh-icon-appears-in-the-bottom-right-corner-of-the-project-manager-and-editor-window">A microphone or &quot;refresh&quot; icon appears in the bottom-right corner of the Project Manager and editor window</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-or-project-appears-overly-sharp-or-blurry">The editor or project appears overly sharp or blurry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-or-project-appears-to-have-washed-out-colors">The editor or project appears to have washed out colors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-editor-project-freezes-or-displays-glitched-visuals-after-resuming-the-pc-from-suspend">The editor/project freezes or displays glitched visuals after resuming the PC from suspend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-project-works-when-run-from-the-editor-but-fails-to-load-some-files-when-running-from-an-exported-copy">The project works when run from the editor, but fails to load some files when running from an exported copy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/troubleshooting.html#the-project-crashes-frequently-or-instantly-after-opening-it-from-the-project-manager">The project crashes frequently or instantly after opening it from the project manager</a></li>
@@ -624,30 +635,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/script_editor.html#usage">Usage</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html">Default editor shortcuts</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#general-editor-actions">General editor actions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#bottom-panels">Bottom panels</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#d-canvasitem-editor">2D / CanvasItem editor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#d-spatial-editor">3D / Spatial editor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#text-editor">Text editor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#script-editor">Script editor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#editor-output">Editor output</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#debugger">Debugger</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#file-dialog">File dialog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#filesystem-dock">FileSystem dock</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#scene-tree-dock">Scene tree dock</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#animation-track-editor">Animation track editor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#tilemap-editor">TileMap editor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#tileset-editor">TileSet Editor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#gridmap-editor">GridMap Editor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/default_key_mapping.html#project-manager">Project manager</a></li>
-</ul>
-</li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/editor/customizing_editor.html">Customizing the interface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/customizing_editor.html#moving-and-resizing-docks">Moving and resizing docks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/customizing_editor.html#splitting-the-script-or-shader-editor-to-its-own-window">Splitting the script or shader editor to its own window</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/customizing_editor.html#customizing-editor-layouts">Customizing editor layouts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/customizing_editor.html#customizing-editor-settings">Customizing editor settings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/editor/game_embedding.html">Game embedding</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/game_embedding.html#configuring-game-embedding">Configuring game embedding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/game_embedding.html#features">Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/editor/game_embedding.html#limitations">Limitations</a></li>
 </ul>
 </li>
 </ul>
@@ -863,14 +861,48 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#behavior-changes">Behavior changes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#android">Android</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#id1">Rendering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#id1">Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#id2">Rendering</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#navigation">Navigation</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#changed-defaults">Changed defaults</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#id2">3D</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#id3">Rendering</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#id4">GUI nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#id3">3D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#id4">Rendering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.6.html#id5">GUI nodes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html">Upgrading from Godot 4.6 to Godot 4.7</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#breaking-changes">Breaking changes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#core">Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#d">2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#id1">3D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#gui-nodes">GUI nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#text">Text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#rendering">Rendering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#animation">Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#physics">Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#audio">Audio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#xr">XR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#editor">Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#behavior-changes">Behavior changes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#id2">Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#id3">Rendering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#id4">Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#input">Input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#gdscript">GDScript</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#platforms">Platforms</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#changed-defaults">Changed defaults</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#id5">Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#id6">Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#id7">GUI nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/migrating/upgrading_to_godot_4.7.html#import">Import</a></li>
 </ul>
 </li>
 </ul>
@@ -886,7 +918,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/2d/introduction_to_2d.html#node2d-and-control-node">Node2D and Control node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/2d/introduction_to_2d.html#d-in-2d">3D in 2D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/2d/introduction_to_2d.html#displaying-3d-nodes-in-2d">Displaying 3D nodes in 2D</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/2d/canvas_layers.html">Canvas layers</a><ul>
@@ -1166,6 +1198,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/3d/lights_and_shadows.html#directional-light">Directional light</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/3d/lights_and_shadows.html#omni-light">Omni light</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/3d/lights_and_shadows.html#spot-light">Spot light</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/3d/lights_and_shadows.html#area-light">Area light</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/3d/lights_and_shadows.html#shadow-atlas">Shadow atlas</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/3d/lights_and_shadows.html#balancing-performance-and-quality">Balancing performance and quality</a></li>
 </ul>
@@ -1411,7 +1444,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/animation/animation_tree.html#statemachine">StateMachine</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/animation_tree.html#blendspace2d-and-blendspace1d">BlendSpace2D and BlendSpace1D</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/animation_tree.html#blendspace2d-and-blendspace1d">BlendSpace2D and BlendSpace1D</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/animation/animation_tree.html#sync-mode">Sync mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/animation/animation_tree.html#blend-mode">Blend mode</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/animation_tree.html#for-better-blending">For better blending</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/animation_tree.html#root-motion">Root motion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/animation/animation_tree.html#controlling-from-code">Controlling from code</a></li>
@@ -1477,6 +1514,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/import_process.html#changing-import-parameters">Changing import parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/import_process.html#reimporting-multiple-assets">Reimporting multiple assets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/import_process.html#automatic-reimport">Automatic reimport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/import_process.html#ignoring-specific-folders">Ignoring specific folders</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/import_process.html#files-generated">Files generated</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/import_process.html#changing-import-resource-type">Changing import resource type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/assets_pipeline/import_process.html#changing-default-import-parameters">Changing default import parameters</a></li>
@@ -1628,7 +1666,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/audio/audio_effects.html">Audio effects</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/audio/audio_effects.html#amplify">Amplify</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/audio/audio_effects.html#bandlimit-and-bandpass">BandLimit and BandPass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/audio/audio_effects.html#bandlimitfilter">BandLimitFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/audio/audio_effects.html#bandpassfilter">BandPassFilter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/audio/audio_effects.html#capture">Capture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/audio/audio_effects.html#chorus">Chorus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/audio/audio_effects.html#compressor">Compressor</a></li>
@@ -1708,12 +1747,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/export/exporting_pcks.html">Exporting packs, patches, and mods</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#use-cases">Use cases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#overview-of-pck-zip-files">Overview of PCK/ZIP files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#security-concerns">Security concerns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#copyright-concerns">Copyright concerns</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#generating-pck-files">Generating PCK files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#patch-pck-files">Patch PCK files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#generating-patch-pck-files">Generating Patch PCK files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#delta-encoding">Delta encoding</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#opening-pck-or-zip-files-at-runtime">Opening PCK or ZIP files at runtime</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#summary">Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_pcks.html#modding-considerations">Modding considerations</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/export/feature_tags.html">Feature tags</a><ul>
@@ -1727,7 +1773,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/export/exporting_for_windows.html">Exporting for Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_windows.html#architecture">Architecture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_windows.html#changing-the-executable-icon">Changing the executable icon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_windows.html#pck-embedding">PCK embedding</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_windows.html#code-signing">Code signing</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/export/exporting_for_windows.html#setup">Setup</a></li>
 </ul>
@@ -1737,6 +1785,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/export/exporting_for_linux.html">Exporting for Linux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_linux.html#architecture">Architecture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_linux.html#environment-variables">Environment variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_linux.html#export-options">Export options</a></li>
 </ul>
@@ -1761,12 +1810,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/export/exporting_for_android.html">Exporting for Android</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#install-openjdk-17">Install OpenJDK 17</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#download-the-android-sdk">Download the Android SDK</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#setting-it-up-in-godot">Setting it up in Godot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#setup-on-android">Setup on Android</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#setup-on-windows-macos-and-linux">Setup on Windows, macOS, and Linux</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#install-openjdk-17">Install OpenJDK 17</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#download-the-android-sdk">Download the Android SDK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#setting-it-up-in-godot">Setting it up in Godot</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#providing-launcher-icons">Providing launcher icons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#exporting-for-google-play-store">Exporting for Google Play Store</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#optimizing-the-file-size">Optimizing the file size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#performing-a-custom-gradle-build">Performing a custom Gradle build</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#environment-variables">Environment variables</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/export/exporting_for_android.html#export-options">Export options</a></li>
 </ul>
@@ -1834,8 +1888,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/export/android_gradle_build.html">Gradle builds for Android</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/android_gradle_build.html#set-up-the-gradle-build-environment">Set up the gradle build environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/android_gradle_build.html#enabling-the-gradle-build-and-exporting">Enabling the gradle build and exporting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/android_gradle_build.html#set-up-the-gradle-build-environment">Set up the Gradle build environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/android_gradle_build.html#performing-gradle-builds-from-the-android-editor">Performing Gradle builds from the Android editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/export/android_gradle_build.html#enabling-the-gradle-build-and-exporting">Enabling the Gradle build and exporting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/export/one-click_deploy.html">One-click deploy</a><ul>
@@ -2073,6 +2128,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/inputs/controller_features.html">Controller features</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/inputs/controller_features.html#led-color">LED color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/inputs/controller_features.html#motion-sensors-gyroscope-and-accelerometer">Motion sensors (gyroscope and accelerometer)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/inputs/controller_features.html#gyroscope">Gyroscope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/inputs/controller_features.html#accelerometer">Accelerometer</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/inputs/handling_quit_requests.html">Handling quit requests</a><ul>
@@ -2170,7 +2230,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/math/random_number_generation.html">Random number generation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/math/random_number_generation.html#global-scope-versus-randomnumbergenerator-class">Global scope versus RandomNumberGenerator class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/math/random_number_generation.html#the-randomize-method">The randomize() method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/math/random_number_generation.html#random-seed-and-internal-state">Random seed and internal state</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/math/random_number_generation.html#getting-a-random-number">Getting a random number</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/math/random_number_generation.html#get-a-random-array-element">Get a random array element</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/math/random_number_generation.html#get-a-random-dictionary-value">Get a random dictionary value</a></li>
@@ -2287,6 +2347,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#channels">Channels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#example-lobby-implementation">Example lobby implementation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#exporting-for-dedicated-servers">Exporting for dedicated servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#authentication">Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/networking/high_level_multiplayer.html#secure-multiplayer-design">Secure multiplayer design</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/networking/http_request_class.html">Making HTTP requests</a><ul>
@@ -2425,6 +2487,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/performance/thread_safe_apis.html#scene-tree">Scene tree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/performance/thread_safe_apis.html#rendering">Rendering</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/performance/thread_safe_apis.html#physics">Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/performance/thread_safe_apis.html#navigation">Navigation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/performance/thread_safe_apis.html#gdscript-arrays-and-dictionaries">GDScript arrays and dictionaries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/performance/thread_safe_apis.html#resources">Resources</a></li>
 </ul>
@@ -2601,8 +2664,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/physics/interpolation/2d_and_3d_physics_interpolation.html">2D and 3D physics interpolation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/physics/interpolation/2d_and_3d_physics_interpolation.html#global-versus-local-interpolation">Global versus local interpolation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/physics/interpolation/2d_and_3d_physics_interpolation.html#resetting-physics-interpolation">Resetting physics interpolation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/physics/interpolation/2d_and_3d_physics_interpolation.html#d-particles">2D Particles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/physics/interpolation/2d_and_3d_physics_interpolation.html#other">Other</a></li>
 </ul>
@@ -2625,6 +2686,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/platform/index.html">Platform-specific</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/platform/linux/index.html">Linux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/platform/linux/wayland_x11.html">Wayland/X11</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/linux/wayland_x11.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/linux/wayland_x11.html#when-to-use-wayland">When to use Wayland</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/linux/wayland_x11.html#changing-the-display-server-setting">Changing the display server setting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/linux/wayland_x11.html#disabling-libdecor-loading">Disabling libdecor loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/linux/wayland_x11.html#high-dynamic-range-support">High dynamic range support</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/platform/android/index.html">Android</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/platform/android/android_library.html">Godot Android library</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/android/android_library.html#using-the-godot-android-library">Using the Godot Android library</a></li>
@@ -2642,10 +2714,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/android/android_plugin.html#tips-and-guidelines">Tips and Guidelines</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/platform/android/android_in_app_purchases.html">Android in-app purchases</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/android/android_in_app_purchases.html#usage">Usage</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/platform/android/android_in_app_purchases.html">Android in-app purchases</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/platform/android/javaclasswrapper_and_androidruntimeplugin.html">Integrating with Android APIs</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/android/javaclasswrapper_and_androidruntimeplugin.html#javaclasswrapper-godot-singleton">JavaClassWrapper (Godot singleton)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/android/javaclasswrapper_and_androidruntimeplugin.html#androidruntime-plugin">AndroidRuntime plugin</a></li>
@@ -2664,13 +2733,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/platform/ios/ios_plugin.html">Creating iOS plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/ios/ios_plugin.html#loading-and-using-an-existing-plugin">Loading and using an existing plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/ios/ios_plugin.html#creating-an-ios-plugin">Creating an iOS plugin</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/platform/ios/plugins_for_ios.html">Plugins for iOS</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/ios/plugins_for_ios.html#accessing-plugin-singletons">Accessing plugin singletons</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/ios/plugins_for_ios.html#asynchronous-methods">Asynchronous methods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/ios/plugins_for_ios.html#store-kit">Store Kit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/platform/ios/plugins_for_ios.html#game-center">Game Center</a></li>
 </ul>
 </li>
 </ul>
@@ -2724,6 +2786,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/plugins/editor/making_main_screen_plugins.html#initializing-the-plugin">Initializing the plugin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/plugins/editor/making_main_screen_plugins.html#main-screen-scene">Main screen scene</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/plugins/editor/making_main_screen_plugins.html#update-the-plugin-script">Update the plugin script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/plugins/editor/making_main_screen_plugins.html#main-screen-icons">Main screen icons</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/plugins/editor/making_main_screen_plugins.html#try-the-plugin">Try the plugin</a></li>
 </ul>
 </li>
@@ -2751,6 +2814,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/plugins/editor/visual_shader_plugins.html">Visual Shader plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/plugins/editor/internationalizing_plugins.html">Internationalizing plugins</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/plugins/running_code_in_the_editor.html">Running code in the editor</a><ul>
@@ -2760,6 +2824,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/plugins/running_code_in_the_editor.html#debugging">Debugging</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/plugins/running_code_in_the_editor.html#try-tool-out">Try <code class="docutils literal notranslate"><span class="pre">&#64;tool</span></code> out</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/plugins/running_code_in_the_editor.html#editing-variables">Editing variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/plugins/running_code_in_the_editor.html#getting-notified-when-arrays-or-dictionaries-change">Getting notified when arrays or dictionaries change</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/plugins/running_code_in_the_editor.html#getting-notified-when-resources-change">Getting notified when resources change</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/plugins/running_code_in_the_editor.html#reporting-node-configuration-warnings">Reporting node configuration warnings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/plugins/running_code_in_the_editor.html#running-one-off-scripts-using-editorscript">Running one-off scripts using EditorScript</a></li>
@@ -2824,6 +2889,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/multiple_resolutions.html#hidpi-support">hiDPI support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/multiple_resolutions.html#font-and-image-oversampling">Font and image oversampling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/multiple_resolutions.html#reducing-aliasing-on-downsampling">Reducing aliasing on downsampling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/multiple_resolutions.html#handling-aspect-ratios">Handling aspect ratios</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/multiple_resolutions.html#field-of-view-scaling">Field of view scaling</a></li>
@@ -2852,6 +2918,35 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/rendering/compositor.html">The Compositor</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/compositor.html#compositor-effects">Compositor effects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/rendering/drawable_textures.html">Using DrawableTextures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/drawable_textures.html#basic-rectangle-blitting">Basic rectangle blitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/drawable_textures.html#blend-modes-and-texture-blit-shaders">Blend modes and texture blit shaders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/drawable_textures.html#using-multiple-blits-in-a-single-texture">Using multiple blits in a single texture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/drawable_textures.html#example-1-simple-painting">Example 1: Simple painting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/rendering/hdr_output.html">HDR output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#enabling-hdr-output-in-your-project">Enabling HDR output in your project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#using-hdr-output-in-godot">Using HDR output in Godot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#hdr-output-in-the-godot-editor">HDR output in the Godot editor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#hdr-output-fundamentals">HDR output fundamentals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#designing-for-hdr-output">Designing for HDR output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#using-output-max-linear-value">Using output max linear value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#using-tonemapping">Using Tonemapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#why-not-mix-output-max-linear-value-with-other-techniques">Why not mix output max linear value with other techniques?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#absolute-luminance-values">Absolute luminance values</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#reference-white-luminance">Reference white luminance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#maximum-luminance">Maximum luminance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#output-max-linear-value-in-practice">Output max linear value in practice</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/rendering/hdr_output.html#not-all-screens-are-equal">Not all screens are equal</a></li>
 </ul>
 </li>
 </ul>
@@ -2898,8 +2993,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_exports.html#basic-use">Basic use</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_exports.html#grouping-exports">Grouping exports</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_exports.html#strings-as-paths">Strings as paths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_exports.html#strings-as-input-actions">Strings as input actions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_exports.html#limiting-editor-input-ranges">Limiting editor input ranges</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_exports.html#adding-suffixes-and-handling-degrees-radians">Adding suffixes and handling degrees/radians</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_exports.html#linking-vector-values-together">Linking vector values together</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_exports.html#floats-with-easing-hint">Floats with easing hint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_exports.html#colors">Colors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdscript/gdscript_exports.html#nodes">Nodes</a></li>
@@ -3059,44 +3156,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/scripting/other_languages.html">Other languages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/scripting/gdextension/index.html">The GDExtension system</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/scripting/gdextension/what_is_gdextension.html">What is GDExtension?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/what_is_gdextension.html#version-compatibility">Version compatibility</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_file.html">The .gdextension file</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_file.html#introduction">Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_file.html#configuration-section">Configuration section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_file.html#libraries-section">Libraries section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_file.html#icons-section">Icons section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_file.html#dependencies-section">Dependencies section</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_interface_json_file.html">The C interface JSON file</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_interface_json_file.html#overall-structure">Overall structure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_interface_json_file.html#header">Header</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_interface_json_file.html#types">Types</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_interface_json_file.html#interface">Interface</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html">GDExtension C example</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#introduction">Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#setting-up-the-project">Setting up the project</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#file-structure">File structure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#buildsystem">Buildsystem</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#initializing-the-extension">Initializing the extension</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#a-basic-class">A basic class</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#a-wrapper-api">A wrapper API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#a-demo-project">A demo project</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#custom-methods">Custom methods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#custom-properties">Custom properties</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#binding-virtual-methods">Binding virtual methods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#registering-and-emitting-a-signal">Registering and emitting a signal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/gdextension/gdextension_c_example.html#conclusion">Conclusion</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/scripting/index.html#core-features">Core features</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/scripting/how_to_read_the_godot_api.html">How to read the Godot API</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/scripting/how_to_read_the_godot_api.html#inheritance">Inheritance</a></li>
@@ -3256,7 +3315,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/shaders/shader_reference/shading_language.html#built-in-functions">Built-in functions</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/shader_reference/shader_functions.html">Built-in functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/shader_reference/shader_functions.html">Built-in shader functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/shaders/shader_reference/shader_functions.html#trigonometric-functions">Trigonometric functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/shaders/shader_reference/shader_functions.html#exponential-and-math-functions">Exponential and math functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/shaders/shader_reference/shader_functions.html#geometric-functions">Geometric functions</a></li>
@@ -3313,6 +3372,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/shaders/shader_reference/fog_shader.html#built-ins">Built-ins</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/shaders/shader_reference/fog_shader.html#global-built-ins">Global built-ins</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/shaders/shader_reference/fog_shader.html#fog-built-ins">Fog built-ins</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/shaders/shader_reference/texture_blit_shader.html">Texture blit shaders</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/shaders/shader_reference/texture_blit_shader.html#render-modes">Render modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/shaders/shader_reference/texture_blit_shader.html#built-ins">Built-ins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/shaders/shader_reference/texture_blit_shader.html#global-built-ins">Global built-ins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/shaders/shader_reference/texture_blit_shader.html#blit-built-ins">Blit built-ins</a></li>
 </ul>
 </li>
 </ul>
@@ -3550,6 +3616,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/ui/creating_applications.html#recommended-project-settings">Recommended project settings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/ui/creating_applications.html#adding-unit-tests">Adding unit tests</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/ui/creating_applications.html#optimizing-distribution-size">Optimizing distribution size</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/ui/creating_applications.html#creating-a-single-executable-distribution">Creating a single-executable distribution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/ui/creating_applications.html#creating-portable-applications">Creating portable applications</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/ui/creating_applications.html#creating-installers">Creating installers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/ui/creating_applications.html#resources">Resources</a></li>
 </ul>
@@ -3559,31 +3627,18 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/xr/index.html">XR</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/xr/index.html#basic-tutorial">Basic Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/xr/xr_terminology.html">XR Terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_terminology.html#xr-extended-reality">XR (Extended Reality)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_terminology.html#vr-virtual-reality">VR (Virtual Reality)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_terminology.html#ar-augmented-reality">AR (Augmented Reality)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/xr/index.html#getting-started">Getting Started</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/setting_up_xr.html">Setting up XR</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/setting_up_xr.html#introduction-to-the-xr-system-in-godot">Introduction to the XR system in Godot</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/setting_up_xr.html#which-renderer-to-use">Which Renderer to use</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/setting_up_xr.html#openxr">OpenXR</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/setting_up_xr.html#setting-up-the-xr-scene">Setting up the XR scene</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/deploying_to_android.html">Deploying to Android</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/deploying_to_android.html#setup">Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/deploying_to_android.html#gradle-android-build">Gradle Android build</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/deploying_to_android.html#installing-the-vendors-plugin">Installing the vendors plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/deploying_to_android.html#creating-the-export-presets">Creating the export presets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/deploying_to_android.html#running-on-your-device-from-the-godot-editor">Running on your device from the Godot editor</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html">A better XR start script</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#signals-for-our-script">Signals for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#variables-for-our-script">Variables for our script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#our-updated-ready-function">Our updated ready function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-session-begun">On session begun</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-visible-state">On visible state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-focussed-state">On focussed state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-stopping-state">On stopping state</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html#on-pose-recentered">On pose recentered</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/ar_passthrough.html">AR / Passthrough</a><ul>
@@ -3601,74 +3656,28 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/xr/index.html#advanced-topics">Advanced topics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_settings.html">OpenXR Settings</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#general-settings">General settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#extensions">Extensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html#binding-modifiers">Binding Modifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/xr/index.html#xr-interfaces">XR Interfaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/index.html#openxr">OpenXR</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/a_better_xr_start_script.html">A better XR start script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/deploying_to_android.html">Deploying to Android</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_settings.html">OpenXR Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_action_map.html">The XR action map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html">OpenXR composition layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html">OpenXR hand tracking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_body_tracking.html">OpenXR body tracking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_render_models.html">OpenXR Render Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_spatial_entities.html">OpenXR spatial entities</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_action_map.html">The XR action map</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_action_map.html#the-default-action-map">The default action map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_action_map.html#action-sets">Action sets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_action_map.html#actions">Actions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_action_map.html#profiles">Profiles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_action_map.html#our-first-controller-binding">Our first controller binding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_action_map.html#the-simple-controller">The simple controller</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_action_map.html#binding-modifiers">Binding Modifiers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/index.html#webxr">WebXR</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/webxr_intro.html">WebXR</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html">Room scale in XR</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#origin-centric-solution">Origin centric solution</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#step-1">Step 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#step-2">Step 2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#step-3">Step 3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#character-body-centric-solution">Character body centric solution</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#id1">Step 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#id2">Step 2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#id3">Step 3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#when-the-player-walks-to-somewhere-they-shouldn-t">When the player walks to somewhere they shouldn't</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#further-suggestions-for-improvements">Further suggestions for improvements</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_full_screen_effects.html">XR full screen effects</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_full_screen_effects.html#applying-the-projection-matrix">Applying the projection matrix</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_full_screen_effects.html#limitations">Limitations</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html">OpenXR composition layers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#introduction">Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#setting-up-the-subviewport">Setting up the SubViewport</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#adding-a-composition-layer">Adding a composition layer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#making-the-interface-work">Making the interface work</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_composition_layers.html#hole-punching">Hole punching</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html">OpenXR hand tracking</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#introduction">Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#demo-project">Demo project</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-api">The Hand Tracking API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#the-hand-tracking-data-source">The hand tracking data source</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_hand_tracking.html#handling-user-input">Handling user input</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_body_tracking.html">OpenXR body tracking</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_body_tracking.html#htc-tracker-support">HTC Tracker support</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_render_models.html">OpenXR Render Models</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_render_models.html#openxr-render-models-node">OpenXR Render models node</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_render_models.html#render-model-node">Render model node</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_render_models.html#backend-access">Backend access</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/openxr_spatial_entities.html">OpenXR spatial entities</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_spatial_entities.html#setup">Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_spatial_entities.html#creating-our-spatial-manager">Creating our spatial manager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_spatial_entities.html#spatial-anchors">Spatial anchors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_spatial_entities.html#plane-tracking">Plane tracking</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_spatial_entities.html#marker-tracking">Marker tracking</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openxr_spatial_entities.html#backend-access">Backend access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/index.html#others">Others</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/mobilevr_intro.html">Mobile VR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/arcore_intro.html">ARCore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/openvr_intro.html">OpenVR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/tiltfive_intro.html">TiltFive</a></li>
 </ul>
 </li>
 </ul>
@@ -3686,6 +3695,27 @@
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/basic_xr_locomotion.html#direct-movement">Direct movement</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/basic_xr_locomotion.html#teleport">Teleport</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/basic_xr_locomotion.html#more-advanced-movement-features">More advanced movement features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/xr/index.html#advanced-topics">Advanced Topics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html">Room scale in XR</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#origin-centric-solution">Origin centric solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#step-1">Step 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#step-2">Step 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#step-3">Step 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#character-body-centric-solution">Character body centric solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#id1">Step 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#id2">Step 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#id3">Step 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#when-the-player-walks-to-somewhere-they-shouldn-t">When the player walks to somewhere they shouldn't</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_room_scale.html#further-suggestions-for-improvements">Further suggestions for improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/xr/xr_full_screen_effects.html">XR full screen effects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_full_screen_effects.html#applying-the-projection-matrix">Applying the projection matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tutorials/xr/xr_full_screen_effects.html#limitations">Limitations</a></li>
 </ul>
 </li>
 </ul>
@@ -3797,6 +3827,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../engine_details/architecture/internal_rendering_architecture.html#d-and-3d-rendering-separation">2D and 3D rendering separation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../engine_details/architecture/internal_rendering_architecture.html#d-rendering-techniques">2D rendering techniques</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../engine_details/architecture/internal_rendering_architecture.html#id1">3D rendering techniques</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/architecture/internal_rendering_architecture.html#reverse-z">Reverse Z</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/architecture/internal_rendering_architecture.html#batching-and-instancing">Batching and instancing</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/architecture/internal_rendering_architecture.html#light-decal-and-reflection-probe-rendering">Light, decal and reflection probe rendering</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/architecture/internal_rendering_architecture.html#shadow-mapping">Shadow mapping</a></li>
@@ -3854,34 +3885,56 @@
 <li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/custom_modules_in_cpp.html#summing-up">Summing up</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../engine_details/engine_api/vendor_runtime_module.html">Vendor Runtime Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/vendor_runtime_module.html#what-for">What for?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/vendor_runtime_module.html#creating-a-vendor-runtime-module">Creating a vendor runtime module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/vendor_runtime_module.html#generating-export-templates">Generating export templates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/vendor_runtime_module.html#creating-the-wrapper-editor-plugin">Creating the wrapper editor plugin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../engine_details/engine_api/gdextension/index.html">The GDExtension system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/gdextension/what_is_gdextension.html">What is GDExtension?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/what_is_gdextension.html#version-compatibility">Version compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_file.html">The .gdextension file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_file.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_file.html#configuration-section">Configuration section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_file.html#libraries-section">Libraries section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_file.html#icons-section">Icons section</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_file.html#dependencies-section">Dependencies section</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_interface_json_file.html">The C interface JSON file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_interface_json_file.html#overall-structure">Overall structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_interface_json_file.html#header">Header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_interface_json_file.html#types">Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_interface_json_file.html#interface">Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html">GDExtension C example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#setting-up-the-project">Setting up the project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#file-structure">File structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#buildsystem">Buildsystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#initializing-the-extension">Initializing the extension</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#a-basic-class">A basic class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#a-wrapper-api">A wrapper API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#a-demo-project">A demo project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#custom-methods">Custom methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#custom-properties">Custom properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#binding-virtual-methods">Binding virtual methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#registering-and-emitting-a-signal">Registering and emitting a signal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/gdextension/gdextension_c_example.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../engine_details/engine_api/binding_to_external_libraries.html">Binding to external libraries</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/binding_to_external_libraries.html#modules">Modules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/binding_to_external_libraries.html#using-the-module">Using the module</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html">Custom Godot servers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#introduction">Introduction</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#references">References</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#what-for">What for?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#creating-a-godot-server">Creating a Godot server</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#custom-managed-resource-data">Custom managed resource data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#id1">References</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#registering-the-class-in-gdscript">Registering the class in GDScript</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#bind-methods">Bind methods</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#messagequeue">MessageQueue</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#id2">References:</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#summing-it-up">Summing it up</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../engine_details/engine_api/custom_godot_servers.html#notes">Notes</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../engine_details/engine_api/custom_resource_format_loaders.html">Custom resource format loaders</a><ul>
@@ -4029,6 +4082,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_windows.html#compiling">Compiling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_windows.html#installing-direct3d-12-requirements">Installing Direct3D 12 requirements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_windows.html#compiling-with-accesskit-support">Compiling with AccessKit support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_windows.html#compiling-with-winrt-support">Compiling with WinRT support</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_windows.html#compiling-with-angle-support">Compiling with ANGLE support</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_windows.html#development-in-visual-studio">Development in Visual Studio</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_windows.html#cross-compiling-for-windows-from-other-operating-systems">Cross-compiling for Windows from other operating systems</a></li>
@@ -4051,6 +4105,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_macos.html#requirements">Requirements</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_macos.html#compiling">Compiling</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_macos.html#compiling-with-accesskit-support">Compiling with AccessKit support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_macos.html#compiling-with-angle-support">Compiling with ANGLE support</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_macos.html#running-a-headless-server-build">Running a headless/server build</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_macos.html#building-export-templates">Building export templates</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/development/compiling/compiling_for_macos.html#cross-compiling-for-macos-from-linux">Cross-compiling for macOS from Linux</a></li>
@@ -4179,7 +4234,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../engine_details/editor/creating_icons.html">Editor icons</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../engine_details/editor/creating_icons.html#creating-icons">Creating icons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../engine_details/editor/creating_icons.html#color-conversion-for-light-editor-themes">Color conversion for light editor themes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../engine_details/editor/creating_icons.html#import-options-for-custom-icons">Import options for custom icons</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/editor/creating_icons.html#scaling-for-hidpi-displays">Scaling for hiDPI displays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../engine_details/editor/creating_icons.html#color-conversion-for-light-editor-themes">Color conversion for light editor themes</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../engine_details/editor/creating_icons.html#icon-optimization">Icon optimization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../engine_details/editor/creating_icons.html#integrating-and-sharing-the-icons">Integrating and sharing the icons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../engine_details/editor/creating_icons.html#troubleshooting">Troubleshooting</a></li>
@@ -4203,7 +4262,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../engine_details/file_formats/index.html">Godot file formats</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../engine_details/file_formats/gdscript_grammar.html">GDScript grammar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../engine_details/file_formats/tscn.html">TSCN file format</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../engine_details/file_formats/tscn.html#file-structure">File structure</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../engine_details/file_formats/tscn.html#entries-inside-the-file">Entries inside the file</a></li>
@@ -4262,6 +4320,66 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../community/asset_store/index.html">Asset Store</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../community/asset_store/what_is_asset_store.html">About the Asset Store</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/what_is_asset_store.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/what_is_asset_store.html#types-of-assets">Types of assets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/what_is_asset_store.html#the-old-asset-library">The old Asset library</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../community/asset_store/using_asset_store_website.html">Using the Asset Store Website</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/using_asset_store_website.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/using_asset_store_website.html#searching">Searching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/using_asset_store_website.html#breakdown-of-an-asset">Breakdown of an asset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/using_asset_store_website.html#registering-and-logging-in">Registering and logging in</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../community/asset_store/using_in_editor.html">Using the Asset Store in the Engine</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/using_in_editor.html#accessing-it">Accessing it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/using_in_editor.html#downloading-and-installing-assets">Downloading and installing assets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html">Submitting to the Asset Store</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#submission-guidelines">Submission guidelines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#recommendations">Recommendations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#submitting">Submitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#management-pages">Management pages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#settings">Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#media">Media</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#versions">Versions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#pricing">Pricing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/submitting_to_asset_store.html#submitting-for-review">Submitting for review</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../community/asset_store/faq.html">Frequently asked questions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/faq.html#general-store-questions">General store questions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/faq.html#i-found-a-bug-in-the-store-website-where-do-i-report-it">I found a bug in the store website, where do I report it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/faq.html#is-there-anywhere-i-can-suggest-new-features-or-improvements-to-the-store-itself">Is there anywhere I can suggest new features or improvements to the store itself?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/faq.html#how-do-i-report-an-asset-for-theft-copyright-infringement-malicious-code">How do I report an asset for theft/copyright infringement/malicious code?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/faq.html#i-can-t-find-an-addon-i-download-before-when-this-was-the-asset-library-was-everything-old-removed">I can't find an addon I download before when this was the Asset Library, was everything old removed?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../community/asset_store/faq.html#asset-submission-questions">Asset submission questions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/faq.html#can-i-charge-money-for-my-assets">Can I charge money for my assets?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/faq.html#i-consider-my-addon-in-the-early-alpha-or-beta-stage-of-development-can-i-upload-it">I consider my addon in the early alpha or beta stage of development, can I upload it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/faq.html#can-i-link-to-a-patreon-ko-fi-or-other-3rd-party-site-to-support-development">Can I link to a Patreon, Ko-Fi, or other 3rd party site to support development?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/faq.html#can-i-submit-an-addon-that-only-works-in-godot-3">Can I submit an addon that only works in Godot 3?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/faq.html#i-have-an-addon-with-a-godot-3-and-godot-4-version-do-i-submit-it-twice">I have an addon with a Godot 3 and Godot 4 version, do I submit it twice?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/faq.html#is-there-a-size-limit">Is there a size limit?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../community/asset_store/faq.html#can-i-upload-ai-generated-assets-or-code">Can I upload AI generated assets or code?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../community/channels.html">Community channels</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../community/channels.html#language-based-communities">Language-based communities</a></li>
 </ul>
@@ -4293,6 +4411,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_%40globalscope.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40globalscope.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40globalscope.html#enumerations">Enumerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_%40globalscope.html#constants">Constants</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40globalscope.html#property-descriptions">Property Descriptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_%40globalscope.html#method-descriptions">Method Descriptions</a></li>
 </ul>
@@ -4418,6 +4537,13 @@
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#enumerations">Enumerations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#property-descriptions">Property Descriptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_area3d.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_arealight3d.html">AreaLight3D</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_arealight3d.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_arealight3d.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_arealight3d.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_arealight3d.html#property-descriptions">Property Descriptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_aspectratiocontainer.html">AspectRatioContainer</a><ul>
@@ -4769,6 +4895,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_container.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_container.html#signals">Signals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_container.html#constants">Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_container.html#property-descriptions">Property Descriptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_container.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
@@ -4921,7 +5048,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_editorcommandpalette.html">EditorCommandPalette</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_editorcommandpalette.html#description">Description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_editorcommandpalette.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_editorcommandpalette.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_editorcommandpalette.html#method-descriptions">Method Descriptions</a></li>
 </ul>
@@ -5232,6 +5358,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_gridmap.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gridmap.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gridmap.html#signals">Signals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gridmap.html#enumerations">Enumerations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gridmap.html#constants">Constants</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gridmap.html#property-descriptions">Property Descriptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_gridmap.html#method-descriptions">Method Descriptions</a></li>
@@ -5693,7 +5820,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_openxrbindingmodifiereditor.html">OpenXRBindingModifierEditor</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrbindingmodifiereditor.html#description">Description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_openxrbindingmodifiereditor.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrbindingmodifiereditor.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrbindingmodifiereditor.html#signals">Signals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrbindingmodifiereditor.html#method-descriptions">Method Descriptions</a></li>
@@ -5739,7 +5865,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_openxrinteractionprofileeditorbase.html">OpenXRInteractionProfileEditorBase</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrinteractionprofileeditorbase.html#description">Description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_openxrinteractionprofileeditorbase.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrinteractionprofileeditorbase.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrinteractionprofileeditorbase.html#method-descriptions">Method Descriptions</a></li>
 </ul>
@@ -6511,6 +6636,16 @@
 <li class="toctree-l3"><a class="reference internal" href="class_viewport.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="class_virtualjoystick.html">VirtualJoystick</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_virtualjoystick.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_virtualjoystick.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_virtualjoystick.html#theme-properties">Theme Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_virtualjoystick.html#signals">Signals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_virtualjoystick.html#enumerations">Enumerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_virtualjoystick.html#property-descriptions">Property Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_virtualjoystick.html#theme-property-descriptions">Theme Property Descriptions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="class_visibleonscreenenabler2d.html">VisibleOnScreenEnabler2D</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_visibleonscreenenabler2d.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_visibleonscreenenabler2d.html#properties">Properties</a></li>
@@ -6585,6 +6720,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_window.html">Window</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_window.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_window.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_window.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_window.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_window.html#theme-properties">Theme Properties</a></li>
@@ -7093,6 +7229,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiostreaminteractive.html">AudioStreamInteractive</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreaminteractive.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audiostreaminteractive.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreaminteractive.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreaminteractive.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreaminteractive.html#enumerations">Enumerations</a></li>
@@ -7108,6 +7245,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiostreammp3.html">AudioStreamMP3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreammp3.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audiostreammp3.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreammp3.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreammp3.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreammp3.html#property-descriptions">Property Descriptions</a></li>
@@ -7124,6 +7262,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiostreamplaylist.html">AudioStreamPlaylist</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaylist.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaylist.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaylist.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaylist.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaylist.html#constants">Constants</a></li>
@@ -7133,12 +7273,14 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiostreampolyphonic.html">AudioStreamPolyphonic</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreampolyphonic.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audiostreampolyphonic.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreampolyphonic.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreampolyphonic.html#property-descriptions">Property Descriptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiostreamrandomizer.html">AudioStreamRandomizer</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamrandomizer.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audiostreamrandomizer.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamrandomizer.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamrandomizer.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamrandomizer.html#enumerations">Enumerations</a></li>
@@ -7148,6 +7290,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiostreamsynchronized.html">AudioStreamSynchronized</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamsynchronized.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_audiostreamsynchronized.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamsynchronized.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamsynchronized.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamsynchronized.html#constants">Constants</a></li>
@@ -7179,6 +7322,13 @@
 <li class="toctree-l3"><a class="reference internal" href="class_bitmap.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_bitmap.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_bitmap.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_blitmaterial.html">BlitMaterial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_blitmaterial.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_blitmaterial.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_blitmaterial.html#enumerations">Enumerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_blitmaterial.html#property-descriptions">Property Descriptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_bonemap.html">BoneMap</a><ul>
@@ -7467,6 +7617,14 @@
 <li class="toctree-l3"><a class="reference internal" href="class_dpitexture.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dpitexture.html#property-descriptions">Property Descriptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_dpitexture.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_drawabletexture2d.html">DrawableTexture2D</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_drawabletexture2d.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_drawabletexture2d.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_drawabletexture2d.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_drawabletexture2d.html#enumerations">Enumerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_drawabletexture2d.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_editornode3dgizmoplugin.html">EditorNode3DGizmoPlugin</a><ul>
@@ -8572,6 +8730,7 @@
 <li class="toctree-l2"><a class="reference internal" href="class_spriteframes.html">SpriteFrames</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_spriteframes.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_spriteframes.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_spriteframes.html#enumerations">Enumerations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_spriteframes.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
@@ -9492,6 +9651,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_object.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="class_accessibilityserver.html">AccessibilityServer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_accessibilityserver.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_accessibilityserver.html#enumerations">Enumerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_accessibilityserver.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="class_aescontext.html">AESContext</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_aescontext.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_aescontext.html#methods">Methods</a></li>
@@ -9580,8 +9745,14 @@
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaybackinteractive.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="class_audiostreamplaybackoggvorbis.html">AudioStreamPlaybackOggVorbis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="class_audiostreamplaybackplaylist.html">AudioStreamPlaybackPlaylist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_audiostreamplaybackoggvorbis.html">AudioStreamPlaybackOggVorbis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaybackoggvorbis.html#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_audiostreamplaybackplaylist.html">AudioStreamPlaybackPlaylist</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaybackplaylist.html#description">Description</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiostreamplaybackpolyphonic.html">AudioStreamPlaybackPolyphonic</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaybackpolyphonic.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaybackpolyphonic.html#methods">Methods</a></li>
@@ -9590,11 +9761,21 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_audiostreamplaybackresampled.html">AudioStreamPlaybackResampled</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaybackresampled.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaybackresampled.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaybackresampled.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="class_audiostreamplaybacksynchronized.html">AudioStreamPlaybackSynchronized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class_audiostreamplaybacksynchronized.html">AudioStreamPlaybackSynchronized</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_audiostreamplaybacksynchronized.html#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_awaittweener.html">AwaitTweener</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_awaittweener.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_awaittweener.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_awaittweener.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="class_callbacktweener.html">CallbackTweener</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_callbacktweener.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_callbacktweener.html#methods">Methods</a></li>
@@ -9659,6 +9840,7 @@
 <li class="toctree-l2"><a class="reference internal" href="class_displayserver.html">DisplayServer</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_displayserver.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_displayserver.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_displayserver.html#signals">Signals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_displayserver.html#enumerations">Enumerations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_displayserver.html#constants">Constants</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_displayserver.html#method-descriptions">Method Descriptions</a></li>
@@ -9846,7 +10028,7 @@
 <li class="toctree-l2"><a class="reference internal" href="class_editorsceneformatimporter.html">EditorSceneFormatImporter</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_editorsceneformatimporter.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_editorsceneformatimporter.html#methods">Methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_editorsceneformatimporter.html#constants">Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_editorsceneformatimporter.html#enumerations">Enumerations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_editorsceneformatimporter.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
@@ -9996,6 +10178,24 @@
 <li class="toctree-l3"><a class="reference internal" href="class_gdextensionmanager.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="class_gdscriptlanguageprotocol.html">GDScriptLanguageProtocol</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptlanguageprotocol.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptlanguageprotocol.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptlanguageprotocol.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_gdscripttextdocument.html">GDScriptTextDocument</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscripttextdocument.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscripttextdocument.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscripttextdocument.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_gdscriptworkspace.html">GDScriptWorkspace</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptworkspace.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptworkspace.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptworkspace.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="class_geometry2d.html">Geometry2D</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_geometry2d.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_geometry2d.html#methods">Methods</a></li>
@@ -10074,6 +10274,7 @@
 <li class="toctree-l3"><a class="reference internal" href="class_inputmap.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_inputmap.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_inputmap.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_inputmap.html#signals">Signals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_inputmap.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
@@ -10156,6 +10357,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_logger.html">Logger</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_logger.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_logger.html#tutorials">Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_logger.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_logger.html#enumerations">Enumerations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_logger.html#method-descriptions">Method Descriptions</a></li>
@@ -10593,9 +10795,11 @@
 <li class="toctree-l2"><a class="reference internal" href="class_openxrspatialentitytracker.html">OpenXRSpatialEntityTracker</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrspatialentitytracker.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrspatialentitytracker.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_openxrspatialentitytracker.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrspatialentitytracker.html#signals">Signals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrspatialentitytracker.html#enumerations">Enumerations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_openxrspatialentitytracker.html#property-descriptions">Property Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_openxrspatialentitytracker.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_openxrspatialmarkertrackingcapability.html">OpenXRSpatialMarkerTrackingCapability</a><ul>
@@ -10873,6 +11077,18 @@
 <li class="toctree-l3"><a class="reference internal" href="class_randomnumbergenerator.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="class_rdaccelerationstructuregeometry.html">RDAccelerationStructureGeometry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_rdaccelerationstructuregeometry.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rdaccelerationstructuregeometry.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rdaccelerationstructuregeometry.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_rdaccelerationstructureinstance.html">RDAccelerationStructureInstance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_rdaccelerationstructureinstance.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rdaccelerationstructureinstance.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rdaccelerationstructureinstance.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="class_rdattachmentformat.html">RDAttachmentFormat</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_rdattachmentformat.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rdattachmentformat.html#properties">Properties</a></li>
@@ -10884,6 +11100,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_rdframebufferpass.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rdframebufferpass.html#constants">Constants</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rdframebufferpass.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_rdhitgroup.html">RDHitGroup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_rdhitgroup.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rdhitgroup.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rdhitgroup.html#property-descriptions">Property Descriptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rdpipelinecolorblendstate.html">RDPipelineColorBlendState</a><ul>
@@ -10916,6 +11138,12 @@
 <li class="toctree-l3"><a class="reference internal" href="class_rdpipelinerasterizationstate.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rdpipelinerasterizationstate.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_rdpipelinerasterizationstate.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_rdpipelineshader.html">RDPipelineShader</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_rdpipelineshader.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rdpipelineshader.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_rdpipelineshader.html#property-descriptions">Property Descriptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_rdpipelinespecializationconstant.html">RDPipelineSpecializationConstant</a><ul>
@@ -11756,7 +11984,6 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html#editor-only">Editor-only</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="class_editorcommandpalette.html">EditorCommandPalette</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_editorcommandpalette.html#description">Description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_editorcommandpalette.html#properties">Properties</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_editorcommandpalette.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_editorcommandpalette.html#method-descriptions">Method Descriptions</a></li>
 </ul>
@@ -12012,7 +12239,7 @@
 <li class="toctree-l2"><a class="reference internal" href="class_editorsceneformatimporter.html">EditorSceneFormatImporter</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_editorsceneformatimporter.html#description">Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_editorsceneformatimporter.html#methods">Methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="class_editorsceneformatimporter.html#constants">Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_editorsceneformatimporter.html#enumerations">Enumerations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_editorsceneformatimporter.html#method-descriptions">Method Descriptions</a></li>
 </ul>
 </li>
@@ -12122,6 +12349,158 @@
 <li class="toctree-l3"><a class="reference internal" href="class_filesystemdock.html#methods">Methods</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_filesystemdock.html#signals">Signals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class_filesystemdock.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_gdscriptlanguageprotocol.html">GDScriptLanguageProtocol</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptlanguageprotocol.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptlanguageprotocol.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptlanguageprotocol.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_gdscriptsyntaxhighlighter.html">GDScriptSyntaxHighlighter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptsyntaxhighlighter.html#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_gdscripttextdocument.html">GDScriptTextDocument</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscripttextdocument.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscripttextdocument.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscripttextdocument.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_gdscriptworkspace.html">GDScriptWorkspace</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptworkspace.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptworkspace.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gdscriptworkspace.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_gridmapeditorplugin.html">GridMapEditorPlugin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_gridmapeditorplugin.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gridmapeditorplugin.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_gridmapeditorplugin.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_openxrbindingmodifiereditor.html">OpenXRBindingModifierEditor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_openxrbindingmodifiereditor.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_openxrbindingmodifiereditor.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_openxrbindingmodifiereditor.html#signals">Signals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_openxrbindingmodifiereditor.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_openxrinteractionprofileeditor.html">OpenXRInteractionProfileEditor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_openxrinteractionprofileeditor.html#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_openxrinteractionprofileeditorbase.html">OpenXRInteractionProfileEditorBase</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_openxrinteractionprofileeditorbase.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_openxrinteractionprofileeditorbase.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_openxrinteractionprofileeditorbase.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimporterbitmap.html">ResourceImporterBitMap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterbitmap.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterbitmap.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterbitmap.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterbitmap.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimporterbmfont.html">ResourceImporterBMFont</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterbmfont.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterbmfont.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterbmfont.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterbmfont.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimportercsvtranslation.html">ResourceImporterCSVTranslation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportercsvtranslation.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportercsvtranslation.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportercsvtranslation.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportercsvtranslation.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimporterdynamicfont.html">ResourceImporterDynamicFont</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterdynamicfont.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterdynamicfont.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterdynamicfont.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterdynamicfont.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimporterimage.html">ResourceImporterImage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterimage.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterimage.html#tutorials">Tutorials</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimporterimagefont.html">ResourceImporterImageFont</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterimagefont.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterimagefont.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterimagefont.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterimagefont.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimporterlayeredtexture.html">ResourceImporterLayeredTexture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterlayeredtexture.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterlayeredtexture.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterlayeredtexture.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterlayeredtexture.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimportermp3.html">ResourceImporterMP3</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportermp3.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportermp3.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportermp3.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportermp3.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimporterobj.html">ResourceImporterOBJ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterobj.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterobj.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterobj.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterobj.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimporteroggvorbis.html">ResourceImporterOggVorbis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporteroggvorbis.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporteroggvorbis.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporteroggvorbis.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporteroggvorbis.html#methods">Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporteroggvorbis.html#property-descriptions">Property Descriptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporteroggvorbis.html#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimporterscene.html">ResourceImporterScene</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterscene.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterscene.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterscene.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterscene.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimportershaderfile.html">ResourceImporterShaderFile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportershaderfile.html#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimportersvg.html">ResourceImporterSVG</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportersvg.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportersvg.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportersvg.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimportertexture.html">ResourceImporterTexture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportertexture.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportertexture.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportertexture.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportertexture.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimportertextureatlas.html">ResourceImporterTextureAtlas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportertextureatlas.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportertextureatlas.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimportertextureatlas.html#property-descriptions">Property Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="class_resourceimporterwav.html">ResourceImporterWAV</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterwav.html#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterwav.html#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterwav.html#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="class_resourceimporterwav.html#property-descriptions">Property Descriptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="class_scriptcreatedialog.html">ScriptCreateDialog</a><ul>
@@ -12619,7 +12998,7 @@
   <ul class="wy-breadcrumbs">
 <li>
 	<div style="font-size: 105%;font-weight: 600;">
-		Godot Engine 4.6 documentation in English
+		Godot Engine 4.7 documentation in English
 	</div>
 	<ul class="wy-breadcrumbs">
 		
@@ -12724,7 +13103,7 @@
 <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book"> Read the Docs</span>
-    v: 4.6
+    v: 4.7
     <span class="fa fa-caret-down"></span>
   </span>
   <div class="rst-other-versions">
